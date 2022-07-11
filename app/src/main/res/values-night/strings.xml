@@ -1,8 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">EcommerceApp</string>
     <string name="email_id">Email Id</string>
     <string name="password">Password</string>
-    <string name="forget_password">FORGOT PASSWORD</string>
+    <string name="forget_password">Forget Password</string>
     <string name="login">LOGIN</string>
     <string name="i_don_t_have_an_account">I DON\'T HAVE AN ACCOUNT</string>
 </resources>
