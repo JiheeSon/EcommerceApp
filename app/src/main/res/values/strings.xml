@@ -5,4 +5,8 @@
     <string name="forget_password">FORGOT PASSWORD</string>
     <string name="login">LOGIN</string>
     <string name="i_don_t_have_an_account">I DON\'T HAVE AN ACCOUNT</string>
+    <string name="full_name">Full Name</string>
+    <string name="mobild_no">Mobild No.</string>
+    <string name="i_have_an_account">I HAVE AN ACCOUNT</string>
+    <string name="register">REGISTER</string>
 </resources>
