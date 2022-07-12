@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initViews()
+        initNavBar()
     }
 
-    private fun initViews() {
-        setSupportActionBar(binding.toolbar)
+    private fun initNavBar() {
+        //setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24)
 
@@ -28,7 +28,10 @@ class MainActivity : AppCompatActivity() {
             //menuItems.isChecked = true
             binding.drawerLayoutNav.closeDrawer(GravityCompat.START)
             when (menuItems.itemId) {
-                R.id.nav_home -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                R.id.nav_home -> {
+                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    replaceFragment(R.id.framelayout, HomeFragment())
+                }
                 R.id.nav_cart -> Toast.makeText(this, "Cart", Toast.LENGTH_SHORT).show()
                 R.id.nav_orders -> Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
                 R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
