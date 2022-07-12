@@ -29,7 +29,7 @@
     <EditText
         android:id="@+id/edit_email_id"
         android:layout_marginTop="@dimen/_10dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@drawable/background_edit_text"
         app:layout_constraintTop_toBottomOf="@id/text_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -46,7 +46,7 @@
     <EditText
         android:id="@+id/edit_password"
         android:layout_marginTop="@dimen/_10dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@drawable/background_edit_text"
         android:drawableEnd="@drawable/ic_baseline_visibility_off_24"
         app:layout_constraintTop_toBottomOf="@id/text_password"
         android:layout_width="match_parent"
