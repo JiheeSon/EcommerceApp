@@ -4,13 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityLoginBinding
-import com.example.ecommerceapp.model.remote.data.User
-import com.example.ecommerceapp.model.remote.volleyhandler.LoginVolleyHandler
+import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 import com.example.ecommerceapp.presenter.login.LoginMVP
 import com.example.ecommerceapp.presenter.login.LoginPresenter
-import com.example.ecommerceapp.presenter.registration.RegistrationMVP
 
 class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
     private lateinit var binding: ActivityLoginBinding
@@ -26,7 +23,7 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
     }
 
     private fun setUpEvents() {
-        presenter = LoginPresenter(LoginVolleyHandler(this), this)
+        presenter = LoginPresenter(UserVolleyHandler(this), this)
         binding.apply {
             btnLogin.setOnClickListener {
                 val email = editEmailId.text.toString()

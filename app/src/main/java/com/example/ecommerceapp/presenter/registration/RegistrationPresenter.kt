@@ -2,10 +2,10 @@ package com.example.ecommerceapp.presenter.registration
 
 import com.example.ecommerceapp.model.remote.OperationalCallback
 import com.example.ecommerceapp.model.remote.data.User
-import com.example.ecommerceapp.model.remote.volleyhandler.RegistrationVolleHandler
+import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 
 class RegistrationPresenter
-    (private val volleyHandler: RegistrationVolleHandler, private val registrationView: RegistrationMVP.RegistrationView)
+    (private val volleyHandler: UserVolleyHandler, private val registrationView: RegistrationMVP.RegistrationView)
     : RegistrationMVP.RegistrationPresenter {
 
     override fun registerUser(user: User): String {

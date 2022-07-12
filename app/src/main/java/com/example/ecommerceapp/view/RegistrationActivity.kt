@@ -3,10 +3,9 @@ package com.example.ecommerceapp.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityRegistrationBinding
 import com.example.ecommerceapp.model.remote.data.User
-import com.example.ecommerceapp.model.remote.volleyhandler.RegistrationVolleHandler
+import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 import com.example.ecommerceapp.presenter.registration.RegistrationMVP
 import com.example.ecommerceapp.presenter.registration.RegistrationPresenter
 
@@ -23,7 +22,7 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
     }
 
     private fun setUpEvents() {
-        presenter = RegistrationPresenter(RegistrationVolleHandler(this), this)
+        presenter = RegistrationPresenter(UserVolleyHandler(this), this)
         binding.apply {
             btnRegister.setOnClickListener {
                 val name = editName.text.toString()

@@ -1,17 +1,15 @@
 package com.example.ecommerceapp.presenter.login
 
 import com.example.ecommerceapp.model.remote.OperationalCallback
-import com.example.ecommerceapp.model.remote.volleyhandler.LoginVolleyHandler
-import org.json.JSONObject
-import kotlin.math.log
+import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 
 class LoginPresenter
-    (private val volleyHandler: LoginVolleyHandler, private val loginView: LoginMVP.LoginView)
+    (private val volleyHandler: UserVolleyHandler, private val loginView: LoginMVP.LoginView)
     : LoginMVP.LoginPresenter {
 
-    override fun loginUser(email: String, password: String): JSONObject {
+    override fun loginUser(email: String, password: String): String {
         loginView.onLoad(true)
-        val result = volleyHandler.callLoginApi(email, password,
+        val message = volleyHandler.callLoginApi(email, password,
             object : OperationalCallback {
                 override fun onSuccess(message: String) {
                     loginView.onLoad(false)
@@ -25,7 +23,7 @@ class LoginPresenter
 
             })
 
-        return result
+        return message
     }
 
 }
