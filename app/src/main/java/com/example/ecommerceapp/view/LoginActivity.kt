@@ -40,6 +40,9 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
         binding.textNoAccount.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
         }
+//        binding.textForgotPassword.setOnClickListener {
+//            startActivity(Intent(this, MainActivity::class.java))
+//        }
     }
 
     override fun setResult(message: String) {

@@ -9,4 +9,11 @@
     <string name="mobild_no">Mobild No.</string>
     <string name="i_have_an_account">I HAVE AN ACCOUNT</string>
     <string name="register">REGISTER</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="orders">Orders</string>
+    <string name="cart">Cart</string>
+    <string name="home">Home</string>
 </resources>
