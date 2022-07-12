@@ -15,12 +15,12 @@ class LoginPresenter
             object : OperationalCallback {
                 override fun onSuccess(message: String) {
                     loginView.onLoad(false)
-                    loginView.setResult(message)
+                    loginView.setResult(message, true)
                 }
 
                 override fun onFailure(message: String) {
                     loginView.onLoad(false)
-                    loginView.setResult(message)
+                    loginView.setResult(message, false)
                 }
 
             })

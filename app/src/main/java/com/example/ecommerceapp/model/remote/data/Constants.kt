@@ -8,6 +8,8 @@ object Constants {
     const val TAG_DEV = "tag_dev"
 
     const val PREF_FILE_NAME = "login-details"
-    const val EMAIL = "email"
-    const val PASSWORD = "password"
+    const val PREF_EMAIL = "email_id"
+    const val PREF_NAME = "full_name"
+    const val PREF_MOBILE = "mobile_no"
+    const val PREF_USER_ID = "user_id"
 }

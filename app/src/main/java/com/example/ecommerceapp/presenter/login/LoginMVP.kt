@@ -8,7 +8,7 @@ interface LoginMVP {
     }
 
     interface LoginView {
-        fun setResult(message: String)
+        fun setResult(message: String, loginSuccess: Boolean)
         fun onLoad(isLoading: Boolean)
     }
 }

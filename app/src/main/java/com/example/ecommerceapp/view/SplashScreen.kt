@@ -8,7 +8,8 @@ import android.provider.Telephony.Mms.Part.FILENAME
 import android.util.Log
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
-import com.example.ecommerceapp.model.remote.data.Constants.EMAIL
+import com.example.ecommerceapp.model.storage.getEncryptedPrefs
+import com.example.ecommerceapp.model.storage.isLoggedIn
 
 class SplashScreen : AppCompatActivity() {
     private lateinit var encryptedSharedPrefs: SharedPreferences
@@ -16,32 +17,19 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        initEncryptedPrefs()
+        encryptedSharedPrefs = getEncryptedPrefs(this)
         verifyLogin()
 
         Log.i("tag", "splash screen")
     }
 
     private fun verifyLogin() {
-        if (encryptedSharedPrefs.contains(EMAIL)) {
+        if (isLoggedIn(encryptedSharedPrefs)) {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
-    }
-
-    private fun initEncryptedPrefs() {
-        val keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC
-        val mainKeyAlias = MasterKeys.getOrCreate(keyGenParameterSpec)
-
-        encryptedSharedPrefs = EncryptedSharedPreferences.create(
-            FILENAME,
-            mainKeyAlias,
-            this,
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
-        )
     }
 }

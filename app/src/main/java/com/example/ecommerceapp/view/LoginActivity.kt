@@ -45,8 +45,12 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
 //        }
     }
 
-    override fun setResult(message: String) {
+    override fun setResult(message: String, loginSuccess: Boolean) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        if (loginSuccess) {
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
     }
 
     override fun onLoad(isLoading: Boolean) {
