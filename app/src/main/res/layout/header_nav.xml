@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/text_welcome_user"
+        android:id="@+id/header_welcome_user"
         tools:text="Welcom John"
         android:textSize="@dimen/_20dp"
         android:textColor="@color/light_orange"
@@ -17,20 +17,20 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/text_user_email"
+        android:id="@+id/header_user_email"
         tools:text="john.parker@gmail.com"
         android:layout_marginTop="@dimen/_3dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_welcome_user"
+        app:layout_constraintTop_toBottomOf="@id/header_welcome_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/text_user_mobile"
+        android:id="@+id/header_user_mobile"
         tools:text="+1 8799 8582 41"
         android:layout_marginTop="@dimen/_3dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_user_email"
+        app:layout_constraintTop_toBottomOf="@id/header_user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

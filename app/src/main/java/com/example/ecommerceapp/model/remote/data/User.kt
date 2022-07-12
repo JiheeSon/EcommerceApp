@@ -5,5 +5,5 @@ data class User(
     var full_name: String,
     var mobile_no: String,
     val email_id: String,
-    val password: String
+    val password: String?
 )

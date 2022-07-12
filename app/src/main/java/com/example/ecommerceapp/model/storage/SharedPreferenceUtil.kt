@@ -2,9 +2,6 @@ package com.example.ecommerceapp.model.storage
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.provider.Telephony
-import android.widget.Toast
-import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_EMAIL
@@ -12,6 +9,7 @@ import com.example.ecommerceapp.model.remote.data.Constants.PREF_FILE_NAME
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_MOBILE
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_NAME
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_USER_ID
+import com.example.ecommerceapp.model.remote.data.User
 
 fun getEncryptedPrefs(context: Context): SharedPreferences {
     val keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC
@@ -39,4 +37,20 @@ fun storeLoginDataLocally(editor: SharedPreferences.Editor, userId: String, full
         putString(PREF_USER_ID, userId)
         return commit()
     }
+}
+
+fun getLocalUserData(encryptedSharedPrefs: SharedPreferences): User {
+    return User(
+        encryptedSharedPrefs.getString(PREF_USER_ID, "Not found"),
+        encryptedSharedPrefs.getString(PREF_NAME, "Not found")!!,
+        encryptedSharedPrefs.getString(PREF_MOBILE, "Not found")!!,
+        encryptedSharedPrefs.getString(PREF_EMAIL, "Not found")!!,
+        null
+    )
+}
+
+fun deleteLocalUserData(encryptedSharedPrefs: SharedPreferences): Boolean {
+    val editor = encryptedSharedPrefs.edit()
+    editor.clear()
+    return editor.commit()
 }
