@@ -51,4 +51,12 @@ class HomeFragment : Fragment(), CategoryMVP.CategoryView {
         binding.rvCategory.layoutManager = GridLayoutManager(context, 2)
         binding.rvCategory.adapter = adapter
     }
+
+    override fun onLoad(isLoading: Boolean) {
+        if (isLoading) {
+            binding.circularProgressBar.visibility = View.VISIBLE
+        } else {
+            binding.circularProgressBar.visibility = View.GONE
+        }
+    }
 }

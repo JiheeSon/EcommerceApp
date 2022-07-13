@@ -9,5 +9,6 @@ interface CategoryMVP {
 
     interface CategoryView {
         fun setResult(categoryResponse: CategoryResponse)
+        fun onLoad(isLoading: Boolean)
     }
 }

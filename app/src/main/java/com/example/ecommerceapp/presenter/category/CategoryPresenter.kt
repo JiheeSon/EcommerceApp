@@ -12,9 +12,11 @@ class CategoryPresenter(private val volleyHandler: CategoryVolleyHandler, privat
             object : OperationalCallback {
                 override fun onSuccess(data: Any) {
                     categoryView.setResult(data as CategoryResponse)
+                    categoryView.onLoad(false)
                 }
                 override fun onFailure(message: String) {
                     Log.i(TAG_DEV, message)
+                    categoryView.onLoad(false)
                 }
             }
         )

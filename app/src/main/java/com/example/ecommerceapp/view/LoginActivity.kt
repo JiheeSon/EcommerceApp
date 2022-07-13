@@ -3,6 +3,7 @@ package com.example.ecommerceapp.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.ecommerceapp.databinding.ActivityLoginBinding
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
@@ -51,9 +52,10 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
     }
 
     override fun onLoad(isLoading: Boolean) {
-        if (isLoading)
-            Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
-        else
-            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+        if (isLoading) {
+            binding.circularProgressBar.visibility = View.VISIBLE
+        } else {
+            binding.circularProgressBar.visibility = View.GONE
+        }
     }
 }

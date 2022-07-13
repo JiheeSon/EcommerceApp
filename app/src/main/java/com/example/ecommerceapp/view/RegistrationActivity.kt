@@ -2,6 +2,7 @@ package com.example.ecommerceapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.ecommerceapp.databinding.ActivityRegistrationBinding
 import com.example.ecommerceapp.model.remote.data.User
@@ -32,6 +33,10 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
                 val user = User(null, name, mobile, email, password)
                 presenter.registerUser(user)
             }
+
+            textHaveAccount.setOnClickListener {
+                finish()
+            }
         }
     }
 
@@ -40,10 +45,11 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
     }
 
     override fun onLoad(isLoading: Boolean) {
-        if (isLoading)
-            Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
-        else
-            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show()
+        if (isLoading) {
+            binding.circularProgressBar.visibility = View.VISIBLE
+        } else {
+            binding.circularProgressBar.visibility = View.GONE
+        }
 
     }
 }
