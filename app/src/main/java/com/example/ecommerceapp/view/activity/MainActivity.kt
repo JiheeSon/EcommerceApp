@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.view
+package com.example.ecommerceapp.view.activity
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -14,7 +14,10 @@ import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.storage.deleteLocalUserData
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.model.storage.getLocalUserData
+import com.example.ecommerceapp.view.SplashScreen
+import com.example.ecommerceapp.view.addFragment
 import com.example.ecommerceapp.view.fragment.HomeFragment
+import com.example.ecommerceapp.view.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

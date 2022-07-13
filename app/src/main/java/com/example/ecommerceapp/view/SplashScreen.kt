@@ -4,12 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Telephony.Mms.Part.FILENAME
 import android.util.Log
-import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKeys
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.model.storage.isLoggedIn
+import com.example.ecommerceapp.view.activity.LoginActivity
+import com.example.ecommerceapp.view.activity.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     private lateinit var encryptedSharedPrefs: SharedPreferences

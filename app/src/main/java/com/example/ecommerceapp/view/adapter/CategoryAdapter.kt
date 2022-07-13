@@ -33,6 +33,10 @@ class CategoryAdapter(private val categoryList: List<Category>): RecyclerView.Ad
         holder.apply {
             val category = categoryList[position]
             bind(category)
+
+            itemView.setOnClickListener {
+
+            }
         }
     }
 
