@@ -12,9 +12,9 @@ class RegistrationPresenter
         registrationView.onLoad(true)
         val message = volleyHandler.callRegistrationApi(user,
             object : OperationalCallback {
-                override fun onSuccess(message: String) {
+                override fun onSuccess(data: Any) {
                     registrationView.onLoad(false)
-                    registrationView.setResult(message)
+                    registrationView.setResult(data.toString())
                 }
 
                 override fun onFailure(message: String) {

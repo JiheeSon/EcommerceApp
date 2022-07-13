@@ -11,9 +11,9 @@ class LoginPresenter
         loginView.onLoad(true)
         val message = volleyHandler.callLoginApi(email, password,
             object : OperationalCallback {
-                override fun onSuccess(message: String) {
+                override fun onSuccess(data: Any) {
                     loginView.onLoad(false)
-                    loginView.setResult(message, true)
+                    loginView.setResult(data.toString(), true)
                 }
 
                 override fun onFailure(message: String) {

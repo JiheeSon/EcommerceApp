@@ -2,6 +2,7 @@ package com.example.ecommerceapp.model.remote.data
 
 object Constants {
     const val BASE_URL = "https://psmobitech.com/myshop/index.php/"
+    const val BASE_IMAGE_URL = "https://psmobitech.com/myshop/images/"
     const val REGISTRATION_END_POINT = "User/register"
     const val LOGIN_END_POINT = "User/auth"
     const val CATEGORY_END_POINT = "Category"

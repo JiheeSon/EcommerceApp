@@ -8,13 +8,13 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GravityCompat
-import androidx.security.crypto.EncryptedSharedPreferences
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityMainBinding
 import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.storage.deleteLocalUserData
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.model.storage.getLocalUserData
+import com.example.ecommerceapp.view.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        addFragment(R.id.framelayout, HomeFragment())
         getUserInfo()
         initNavBar()
     }

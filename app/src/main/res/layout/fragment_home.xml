@@ -3,21 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.HomeFragment">
-
-    <TextView
-        android:id="@+id/tmp"
-        android:text="Home Fragment"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    tools:context=".view.fragment.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category"
-        app:layout_constraintTop_toBottomOf="@id/tmp"
         tools:listitem="@layout/item_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
