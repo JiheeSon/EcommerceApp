@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.ecommerceapp.databinding.ActivitySubCategoryBinding
+import com.example.ecommerceapp.model.remote.data.Constants.CATEGORY_ID
 import com.example.ecommerceapp.model.remote.data.SubCategoryListResponse
 import com.example.ecommerceapp.model.remote.data.Subcategory
 import com.example.ecommerceapp.model.remote.volleyhandler.SubCategoryVolleyHandler
@@ -22,7 +23,7 @@ class SubCategoryActivity : AppCompatActivity(), SubCategoryMVP.SubCategoryView 
         binding = ActivitySubCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val categoryId = intent.extras?.get("category_id") as String
+        val categoryId = intent.extras?.get(CATEGORY_ID) as String
         getSubCategoryList(categoryId)
     }
 
@@ -43,8 +44,8 @@ class SubCategoryActivity : AppCompatActivity(), SubCategoryMVP.SubCategoryView 
         }.attach()
     }
 
-    override fun setResult(subCategoryListResponse: SubCategoryListResponse) {
-        subCategoryList = subCategoryListResponse.subcategories
+    override fun setResult(data: Any) {
+        subCategoryList = (data as SubCategoryListResponse).subcategories
         setUpViewPager()
         setUpTabLayout()
     }

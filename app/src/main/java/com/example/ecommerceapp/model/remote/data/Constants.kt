@@ -7,6 +7,10 @@ object Constants {
     const val LOGIN_END_POINT = "User/auth"
     const val CATEGORY_END_POINT = "Category"
     const val SUB_CATEGORY_LIST_END_POINT = "SubCategory?category_id="
+    const val SUB_CATEGORY_PRODUCT_END_POINT = "SubCategory/products/"
+
+    const val CATEGORY_ID = "category_id"
+    const val SUB_CATEGORY_ID ="subcategory_id"
 
     const val TAG_DEV = "tag_dev"
 
