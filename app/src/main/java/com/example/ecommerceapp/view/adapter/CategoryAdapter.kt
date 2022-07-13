@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.ecommerceapp.databinding.ItemCategoryBinding
 import com.example.ecommerceapp.model.remote.data.Category
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
+import com.example.ecommerceapp.view.activity.SubCategoryActivity
 
 class CategoryAdapter(private val categoryList: List<Category>): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
     private lateinit var binding: ItemCategoryBinding
@@ -35,7 +37,9 @@ class CategoryAdapter(private val categoryList: List<Category>): RecyclerView.Ad
             bind(category)
 
             itemView.setOnClickListener {
-
+                val intent = Intent(view.context, SubCategoryActivity::class.java)
+                intent.putExtra("category_id", category.category_id)
+                view.context.startActivity(intent)
             }
         }
     }

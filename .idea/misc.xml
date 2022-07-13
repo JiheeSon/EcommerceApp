@@ -15,9 +15,12 @@
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.152" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_registration.xml" value="0.264" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_sub_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/fragment_sub_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/header_nav.xml" value="0.4" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/item_category.xml" value="0.253125" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/item_product.xml" value="0.264" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/menu/menu_nav.xml" value="0.1" />
       </map>
     </option>

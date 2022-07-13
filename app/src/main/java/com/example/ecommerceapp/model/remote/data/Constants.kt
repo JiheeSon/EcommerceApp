@@ -6,6 +6,8 @@ object Constants {
     const val REGISTRATION_END_POINT = "User/register"
     const val LOGIN_END_POINT = "User/auth"
     const val CATEGORY_END_POINT = "Category"
+    const val SUB_CATEGORY_LIST_END_POINT = "SubCategory?category_id="
+
     const val TAG_DEV = "tag_dev"
 
     const val PREF_FILE_NAME = "login-details"
