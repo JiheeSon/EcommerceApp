@@ -6,7 +6,7 @@ interface LoginMVP {
     }
 
     interface LoginView {
-        fun setResult(message: String, loginSuccess: Boolean)
+        fun setResult(status: Int, message: String)
         fun onLoad(isLoading: Boolean)
     }
 }

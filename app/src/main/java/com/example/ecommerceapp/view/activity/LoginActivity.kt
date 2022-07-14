@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityLoginBinding
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 import com.example.ecommerceapp.presenter.login.LoginMVP
@@ -30,7 +32,16 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
                 val email = editEmailId.text.toString()
                 val password = editPassword.text.toString()
                 presenter.loginUser(email, password)
+
+                clearText()
             }
+        }
+    }
+
+    private fun clearText() {
+        binding.apply {
+            editEmailId.text = null
+            editPassword.text = null
         }
     }
 
@@ -38,17 +49,27 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
         binding.textNoAccount.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
         }
-//        binding.textForgotPassword.setOnClickListener {
-//            startActivity(Intent(this, MainActivity::class.java))
-//        }
     }
 
-    override fun setResult(message: String, loginSuccess: Boolean) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-        if (loginSuccess) {
+    override fun setResult(status: Int, message: String) {
+
+        if (status == 0) {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()
+        } else {
+            showFailureDialog(message)
         }
+    }
+
+    private fun showFailureDialog(message: String) {
+        val builder = AlertDialog.Builder(this)
+            .setTitle("Sorry")
+            .setIcon(R.drawable.ic_baseline_shopping_cart_24)
+            .setMessage(message)
+            .setNeutralButton("Try Again", null)
+        val alertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     override fun onLoad(isLoading: Boolean) {

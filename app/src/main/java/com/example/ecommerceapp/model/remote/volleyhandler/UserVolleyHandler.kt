@@ -8,6 +8,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecommerceapp.model.remote.OperationalCallback
+import com.example.ecommerceapp.model.remote.UserOperationalCallback
 import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
@@ -18,7 +19,7 @@ class UserVolleyHandler(private val context: Context) {
     private var requestQueue: RequestQueue = Volley.newRequestQueue(context)
     private var editor = getEncryptedPrefs(context).edit()
 
-    fun callRegistrationApi(user: User, callback: OperationalCallback): String {
+    fun callRegistrationApi(user: User, callback: UserOperationalCallback): String {
         var url = Constants.BASE_URL + Constants.REGISTRATION_END_POINT
         val data = JSONObject()
         var message: String? = null
@@ -31,20 +32,20 @@ class UserVolleyHandler(private val context: Context) {
         val request = JsonObjectRequest( Request.Method.POST, url, data,
             { response: JSONObject ->
                 message = response.getString("message")
+                val status = response.getInt("status")
                 Log.i(Constants.TAG_DEV, message.toString())
-                callback.onSuccess(message.toString())
+                callback.onSuccess(status, message.toString())
 
             }, { error: VolleyError ->
                 error.printStackTrace()
                 Log.i(Constants.TAG_DEV, error.printStackTrace().toString())
                 callback.onFailure(message.toString())
-
             })
         requestQueue.add(request)
         return message.toString()
     }
 
-    fun callLoginApi(email: String, password: String, callback: OperationalCallback): String {
+    fun callLoginApi(email: String, password: String, callback: UserOperationalCallback): String {
         val url = Constants.BASE_URL + Constants.LOGIN_END_POINT
         val data = JSONObject()
         var message: String? = null
@@ -56,15 +57,18 @@ class UserVolleyHandler(private val context: Context) {
             Request.Method.POST, url, data,
             { response: JSONObject ->
                 message = response.getString("message")
-                callback.onSuccess(message.toString())
-                val user = response.getJSONObject("user")
-                storeLoginDataLocally(
-                    editor,
-                    user.getString("user_id"),
-                    user.getString("full_name"),
-                    user.getString("mobile_no"),
-                    user.getString("user_id")
-                )
+                val status = response.getInt("status")
+                if (status == 0) {
+                    val user = response.getJSONObject("user")
+                    storeLoginDataLocally(
+                        editor,
+                        user.getString("user_id"),
+                        user.getString("full_name"),
+                        user.getString("mobile_no"),
+                        user.getString("user_id")
+                    )
+                }
+                callback.onSuccess(status, message.toString())
             }, { error: VolleyError ->
                 error.printStackTrace()
                 Log.i(Constants.TAG_DEV, error.printStackTrace().toString())

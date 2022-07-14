@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityRegistrationBinding
 import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
@@ -32,6 +34,8 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
                 val password = editPassword.text.toString()
                 val user = User(null, name, mobile, email, password)
                 presenter.registerUser(user)
+
+                clearText()
             }
 
             textHaveAccount.setOnClickListener {
@@ -40,8 +44,26 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
         }
     }
 
-    override fun setResult(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun clearText() {
+        binding.apply {
+            editName.text = null
+            editEmailId.text = null
+            editMobile.text = null
+            editPassword.text = null
+        }
+    }
+
+    override fun setResult(status: Int, message: String) {
+        val title = if (status == 0) "Welcome!" else "Sorry"
+        val builder = AlertDialog.Builder(this)
+            .setTitle(title)
+            .setIcon(R.drawable.ic_baseline_shopping_cart_24)
+            .setMessage(message)
+            .setPositiveButton("Go to Login") {_, _ -> finish() }
+            .setNeutralButton("Cancel", null)
+        val alertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     override fun onLoad(isLoading: Boolean) {
@@ -50,6 +72,5 @@ class RegistrationActivity : AppCompatActivity(), RegistrationMVP.RegistrationVi
         } else {
             binding.circularProgressBar.visibility = View.GONE
         }
-
     }
 }

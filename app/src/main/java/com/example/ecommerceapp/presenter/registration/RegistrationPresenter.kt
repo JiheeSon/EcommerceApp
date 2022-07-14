@@ -1,6 +1,7 @@
 package com.example.ecommerceapp.presenter.registration
 
 import com.example.ecommerceapp.model.remote.OperationalCallback
+import com.example.ecommerceapp.model.remote.UserOperationalCallback
 import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 
@@ -11,15 +12,15 @@ class RegistrationPresenter
     override fun registerUser(user: User): String {
         registrationView.onLoad(true)
         val message = volleyHandler.callRegistrationApi(user,
-            object : OperationalCallback {
-                override fun onSuccess(data: Any) {
+            object : UserOperationalCallback {
+                override fun onSuccess(status: Int, message: String) {
                     registrationView.onLoad(false)
-                    registrationView.setResult(data.toString())
+                    registrationView.setResult(status, message)
                 }
 
                 override fun onFailure(message: String) {
                     registrationView.onLoad(false)
-                    registrationView.setResult(message)
+                    registrationView.setResult(-1,message)
                 }
 
             })

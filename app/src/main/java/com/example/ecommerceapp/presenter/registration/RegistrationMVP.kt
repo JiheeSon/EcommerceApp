@@ -8,7 +8,7 @@ interface RegistrationMVP {
     }
 
     interface RegistrationView {
-        fun setResult(message: String)
+        fun setResult(status: Int, message: String)
         fun onLoad(isLoading: Boolean)
     }
 }
