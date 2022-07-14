@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"/>
 
         <RatingBar
-            android:id="@+id/rading_bar_review"
+            android:id="@+id/rating_bar_review"
             android:isIndicator="true"
             android:numStars="5"
             android:stepSize="0.5"

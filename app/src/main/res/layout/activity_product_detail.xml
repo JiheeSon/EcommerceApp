@@ -13,13 +13,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/text_product_name"
-            tools:text="RealMe Nazro 50"
-            android:textSize="@dimen/_20sp"
-            android:textColor="@color/light_orange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_product_name"
+                tools:text="RealMe Nazro 50"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/light_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:id="@+id/rating_bar_product"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:max="5"
+                style="?android:attr/ratingBarStyleSmall"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/text_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/text_product_description"
@@ -28,12 +49,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager_image_product"
-            android:background="@color/black"
-            android:layout_marginTop="@dimen/_5dp"
+        <FrameLayout
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_image_product"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_height="35dp"
+                app:ci_drawable="@drawable/shape_circleindicator"
+                app:ci_height="7dp"
+                app:ci_margin="4dp"
+                app:ci_width="7dp"/>
+
+        </FrameLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_marginTop="@dimen/_10dp"
@@ -53,7 +90,7 @@
                 android:id="@+id/text_add_to_cart"
                 android:textColor="@color/main_sky_blue"
                 android:textSize="@dimen/_20sp"
-                tools:text="ADD TO CART"
+                android:text="@string/add_to_cart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_width="wrap_content"
@@ -87,7 +124,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_review"
             tools:listitem="@layout/item_review"
-            tools:itemCount="3"
+            tools:itemCount="5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
