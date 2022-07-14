@@ -7,7 +7,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ecommerceapp.model.remote.OperationalCallback
-import com.example.ecommerceapp.model.remote.data.CategoryResponse
+import com.example.ecommerceapp.model.remote.data.category.CategoryResponse
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_URL
 import com.example.ecommerceapp.model.remote.data.Constants.CATEGORY_END_POINT
 import com.google.gson.Gson

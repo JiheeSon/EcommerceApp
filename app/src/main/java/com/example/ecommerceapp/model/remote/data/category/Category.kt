@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.model.remote.data
+package com.example.ecommerceapp.model.remote.data.category
 
 data class Category(
     val category_id: String,

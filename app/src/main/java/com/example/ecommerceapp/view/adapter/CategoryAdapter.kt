@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerceapp.databinding.ItemCategoryBinding
-import com.example.ecommerceapp.model.remote.data.Category
+import com.example.ecommerceapp.model.remote.data.category.Category
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
 import com.example.ecommerceapp.view.activity.SubCategoryActivity
 

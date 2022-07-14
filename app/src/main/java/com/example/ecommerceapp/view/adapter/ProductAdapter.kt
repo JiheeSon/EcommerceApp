@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.ecommerceapp.databinding.ItemProductBinding
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
 import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
-import com.example.ecommerceapp.model.remote.data.Product
+import com.example.ecommerceapp.model.remote.data.subcategory.Product
 import com.example.ecommerceapp.view.activity.ProductDetailActivity
 
 class ProductAdapter(private val productList: ArrayList<Product>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {

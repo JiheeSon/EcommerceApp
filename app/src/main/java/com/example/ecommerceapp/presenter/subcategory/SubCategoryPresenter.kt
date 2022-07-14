@@ -1,8 +1,8 @@
 package com.example.ecommerceapp.presenter.subcategory
 
 import com.example.ecommerceapp.model.remote.OperationalCallback
-import com.example.ecommerceapp.model.remote.data.SubCategoryListResponse
-import com.example.ecommerceapp.model.remote.data.SubCategoryProductListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryProductListResponse
 import com.example.ecommerceapp.model.remote.volleyhandler.SubCategoryVolleyHandler
 
 class SubCategoryPresenter(private val volleyHandler: SubCategoryVolleyHandler, private val subCategoryView: SubCategoryMVP.SubCategoryView): SubCategoryMVP.SubCategoryPresenter {

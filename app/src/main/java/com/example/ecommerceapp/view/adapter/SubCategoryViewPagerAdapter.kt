@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.ecommerceapp.model.remote.data.Constants.SUB_CATEGORY_ID
-import com.example.ecommerceapp.model.remote.data.Subcategory
+import com.example.ecommerceapp.model.remote.data.subcategory.Subcategory
 import com.example.ecommerceapp.view.fragment.SubCategoryFragment
 
 

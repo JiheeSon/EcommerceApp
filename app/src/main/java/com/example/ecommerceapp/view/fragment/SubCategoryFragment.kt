@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerceapp.databinding.FragmentSubCategoryBinding
 import com.example.ecommerceapp.model.remote.data.Constants.SUB_CATEGORY_ID
-import com.example.ecommerceapp.model.remote.data.Product
-import com.example.ecommerceapp.model.remote.data.SubCategoryProductListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.Product
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryProductListResponse
 import com.example.ecommerceapp.model.remote.volleyhandler.SubCategoryVolleyHandler
 import com.example.ecommerceapp.presenter.subcategory.SubCategoryMVP
 import com.example.ecommerceapp.presenter.subcategory.SubCategoryPresenter
-import com.example.ecommerceapp.view.adapter.CategoryAdapter
 import com.example.ecommerceapp.view.adapter.ProductAdapter
 
 class SubCategoryFragment : Fragment(), SubCategoryMVP.SubCategoryView {

@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.model.remote.data
+package com.example.ecommerceapp.model.remote.data.subcategory
 
 data class Product(
     val average_rating: String,

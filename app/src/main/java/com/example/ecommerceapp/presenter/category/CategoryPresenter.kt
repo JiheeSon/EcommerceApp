@@ -2,7 +2,7 @@ package com.example.ecommerceapp.presenter.category
 
 import android.util.Log
 import com.example.ecommerceapp.model.remote.OperationalCallback
-import com.example.ecommerceapp.model.remote.data.CategoryResponse
+import com.example.ecommerceapp.model.remote.data.category.CategoryResponse
 import com.example.ecommerceapp.model.remote.data.Constants.TAG_DEV
 import com.example.ecommerceapp.model.remote.volleyhandler.CategoryVolleyHandler
 

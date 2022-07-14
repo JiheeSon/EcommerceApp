@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.example.ecommerceapp.databinding.ActivitySubCategoryBinding
 import com.example.ecommerceapp.model.remote.data.Constants.CATEGORY_ID
-import com.example.ecommerceapp.model.remote.data.SubCategoryListResponse
-import com.example.ecommerceapp.model.remote.data.Subcategory
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.Subcategory
 import com.example.ecommerceapp.model.remote.volleyhandler.SubCategoryVolleyHandler
 import com.example.ecommerceapp.presenter.subcategory.SubCategoryMVP
 import com.example.ecommerceapp.presenter.subcategory.SubCategoryPresenter

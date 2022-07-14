@@ -10,8 +10,8 @@ import com.example.ecommerceapp.model.remote.OperationalCallback
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_URL
 import com.example.ecommerceapp.model.remote.data.Constants.SUB_CATEGORY_LIST_END_POINT
 import com.example.ecommerceapp.model.remote.data.Constants.SUB_CATEGORY_PRODUCT_END_POINT
-import com.example.ecommerceapp.model.remote.data.SubCategoryListResponse
-import com.example.ecommerceapp.model.remote.data.SubCategoryProductListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryListResponse
+import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryProductListResponse
 import com.google.gson.Gson
 
 class SubCategoryVolleyHandler(private val context: Context) {

@@ -1,6 +1,6 @@
 package com.example.ecommerceapp.presenter.category
 
-import com.example.ecommerceapp.model.remote.data.CategoryResponse
+import com.example.ecommerceapp.model.remote.data.category.CategoryResponse
 
 interface CategoryMVP {
     interface CategoryPresenter {

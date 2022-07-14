@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.FragmentHomeBinding
-import com.example.ecommerceapp.model.remote.data.Category
-import com.example.ecommerceapp.model.remote.data.CategoryResponse
+import com.example.ecommerceapp.model.remote.data.category.Category
+import com.example.ecommerceapp.model.remote.data.category.CategoryResponse
 import com.example.ecommerceapp.model.remote.volleyhandler.CategoryVolleyHandler
 import com.example.ecommerceapp.presenter.category.CategoryMVP
 import com.example.ecommerceapp.presenter.category.CategoryPresenter
