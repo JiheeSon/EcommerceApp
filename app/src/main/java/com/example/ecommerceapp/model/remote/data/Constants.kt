@@ -11,6 +11,7 @@ object Constants {
 
     const val CATEGORY_ID = "category_id"
     const val SUB_CATEGORY_ID ="subcategory_id"
+    const val PRODUCT_ID = "product_id"
 
     const val TAG_DEV = "tag_dev"
 

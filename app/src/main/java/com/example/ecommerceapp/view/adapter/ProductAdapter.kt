@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerceapp.databinding.ItemProductBinding
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
+import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
 import com.example.ecommerceapp.model.remote.data.Product
+import com.example.ecommerceapp.view.activity.ProductDetailActivity
 
 class ProductAdapter(private val productList: ArrayList<Product>): RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
     private lateinit var binding: ItemProductBinding
@@ -35,6 +38,12 @@ class ProductAdapter(private val productList: ArrayList<Product>): RecyclerView.
         holder.apply {
             val product = productList[position]
             bind(product)
+
+            itemView.setOnClickListener {
+                val intent = Intent(view.context, ProductDetailActivity::class.java)
+                intent.putExtra(PRODUCT_ID, product.product_id)
+                view.context.startActivity(intent)
+            }
         }
     }
 

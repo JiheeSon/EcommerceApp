@@ -32,11 +32,15 @@
 
         <RatingBar
             android:id="@+id/rading_bar_product"
+            android:isIndicator = "true"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:max="5"
+            style="?android:attr/ratingBarStyleSmall"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/text_product_name"
             app:layout_constraintBottom_toBottomOf="@id/text_product_name"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"/>
 
         <TextView

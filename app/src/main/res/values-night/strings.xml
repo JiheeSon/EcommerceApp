@@ -15,4 +15,6 @@
     <string name="cart">Cart</string>
     <string name="home">Home</string>
     <string name="add_to_cart">ADD TO CART</string>
+    <string name="specifications">Specifications</string>
+    <string name="user_reviews">User Reviews</string>
 </resources>
