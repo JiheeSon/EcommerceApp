@@ -58,4 +58,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
     implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'com.github.travijuu:numberpicker:1.0.7'
 }

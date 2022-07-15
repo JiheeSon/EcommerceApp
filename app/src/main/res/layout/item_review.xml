@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_review_user_name"
             tools:text="John Parker"
             android:textSize="@dimen/_15sp"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <RatingBar
+        <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rating_bar_review"
             android:isIndicator="true"
             android:numStars="5"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_review_title"
             tools:text="Good quality phone"
             android:layout_marginTop="@dimen/_5dp"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_marginTop="@dimen/_5dp"
             android:id="@+id/text_review_body"
             tools:text="One Plus always exports premium quality mobiles. Let there be no such features like other mobile but iPhone also doesn't export such features at high price."

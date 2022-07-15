@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_product"
             android:src="@drawable/img_product"
             app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
             android:layout_width="@dimen/_120dp"
             android:layout_height="0dp"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_product_name"
             tools:text="RealMe Nazro 50"
             android:textColor="@color/light_orange"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <RatingBar
+        <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rating_bar_product"
             android:isIndicator = "true"
             android:numStars="5"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_product_description"
             android:layout_marginTop="@dimen/_5dp"
             app:layout_constraintStart_toEndOf="@id/image_product"
@@ -54,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_product_price"
             tools:text="$ 200"
             android:layout_marginTop="@dimen/_5dp"
@@ -64,8 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/text_add_to_cart"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_add_to_cart"
             android:text="@string/add_to_cart"
             android:textColor="@color/main_sky_blue"
             android:layout_marginTop="@dimen/_5dp"

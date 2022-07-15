@@ -15,16 +15,9 @@ class SubCategoryViewPagerAdapter(fragmentActivity: FragmentActivity, private va
     }
 
     override fun createFragment(position: Int): Fragment {
-        //val fragment: Fragment = UserFragment() // Fragment 생성
-
-//        val bundle = Bundle(1) // 파라미터는 전달할 데이터 개수
-//
-//        bundle.putString("subcategory_id", subCategoryList[position].subcategory_id) // key , value
-//
-//        fragment.arguments = bundle
 
         return SubCategoryFragment().apply {
-            val bundle = Bundle(1) // 파라미터는 전달할 데이터 개수
+            val bundle = Bundle(1) // paramater capacity is number of data to pass
             bundle.putString(SUB_CATEGORY_ID, subCategoryList[position].subcategory_id) // key , value
             this.arguments = bundle
         }

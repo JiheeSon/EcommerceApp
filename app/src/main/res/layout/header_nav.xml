@@ -6,7 +6,7 @@
     android:padding="@dimen/_16dp"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_welcome_user"
         tools:text="Welcom John"
         android:textSize="@dimen/_20dp"
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_user_email"
         tools:text="john.parker@gmail.com"
         android:layout_marginTop="@dimen/_3dp"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_user_mobile"
         tools:text="+1 8799 8582 41"
         android:layout_marginTop="@dimen/_3dp"

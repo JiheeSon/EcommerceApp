@@ -3,7 +3,14 @@ package com.example.ecommerceapp.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewGroup
+import android.widget.TableLayout
+import android.widget.TableRow
+import android.widget.TextView
+import androidx.core.view.marginBottom
+import androidx.core.view.setMargins
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityProductDetailBinding
 import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
 import com.example.ecommerceapp.model.remote.data.product.*
@@ -54,6 +61,27 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
     }
 
     private fun setUpSpecificationTable(specifications: ArrayList<Specification>) {
+        for (specification in specifications) {
+            val row = TableRow(applicationContext)
+            val title = TextView(applicationContext)
+            val detail = TextView(applicationContext)
+
+            val layoutParams = TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f)
+            layoutParams.setMargins(0,0,0,15)
+
+            title.layoutParams = layoutParams
+            detail.layoutParams = layoutParams
+
+            title.text = specification.title
+            title.textSize = 15F
+            detail.text = specification.specification
+            detail.textSize = 15F
+            detail.setTextColor(getResources().getColor(R.color.purple_700))
+
+            row.addView(title)
+            row.addView(detail)
+            binding.tableLayoutSpecification.addView(row)
+        }
 
     }
 

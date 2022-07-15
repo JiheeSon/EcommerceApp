@@ -7,7 +7,7 @@
     android:padding="@dimen/_30dp"
     tools:context=".view.activity.RegistrationActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_name"
         android:text="@string/full_name"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_mobile"
         android:text="@string/mobild_no"
         app:layout_constraintTop_toBottomOf="@id/edit_name"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_email"
         android:text="@string/email_id"
         android:layout_marginTop="@dimen/_20dp"
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_password"
         android:text="@string/password"
         android:layout_marginTop="@dimen/_20dp"
@@ -73,10 +73,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
         android:text="@string/register"
         android:backgroundTint="@color/main_sky_blue"
+        android:textColor="@color/white"
         android:layout_marginTop="@dimen/_30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_have_account"
         android:text="@string/i_have_an_account"
         android:textColor="@color/light_orange"

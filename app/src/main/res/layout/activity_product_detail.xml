@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.activity.ProductDetailActivity">
 
@@ -17,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_product_name"
                 tools:text="RealMe Nazro 50"
                 android:textSize="@dimen/_20sp"
@@ -27,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <RatingBar
+            <androidx.appcompat.widget.AppCompatRatingBar
                 android:id="@+id/rating_bar_product"
                 android:isIndicator="true"
                 android:numStars="5"
@@ -42,7 +43,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_product_description"
             tools:text="5G, OS: Android 10, RAM: 16 GB, Internal Storage: 256 GB, Primary Camera: 64 MP, Secondary Camera: 13 MP"
             android:paddingTop="@dimen/_5dp"
@@ -58,7 +59,7 @@
                 android:id="@+id/view_pager_image_product"
                 android:layout_marginTop="@dimen/_5dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="300dp"/>
 
             <me.relex.circleindicator.CircleIndicator3
                 android:id="@+id/circle_indicator"
@@ -86,19 +87,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:id="@+id/text_add_to_cart"
-                android:textColor="@color/main_sky_blue"
-                android:textSize="@dimen/_20sp"
-                android:text="@string/add_to_cart"
-                app:layout_constraintEnd_toEndOf="parent"
+            <com.travijuu.numberpicker.library.NumberPicker
+                android:id="@+id/number_picker"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                numberpicker:min="0"
+                numberpicker:max="10"
+                numberpicker:value="-5"
+                numberpicker:unit="1"
+                numberpicker:focusable="false"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_to_cart"
+                android:textColor="@color/main_sky_blue"
+                android:text="@string/add_to_cart"
+                android:backgroundTint="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/number_picker"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_marginTop="@dimen/_10dp"
             android:textStyle="bold"
             android:text="@string/specifications"
@@ -107,13 +121,28 @@
             android:layout_height="wrap_content"/>
 
         <TableLayout
+            android:id="@+id/table_layout_specification"
+            android:padding="@dimen/_10dp"
             android:background="@drawable/background_gray_boundary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+<!--            <TableRow>-->
+<!--                <TextView android:text="Hello" android:layout_weight="1"/>-->
+<!--                <TextView android:text="Hello" android:layout_weight="1"/>-->
+<!--            </TableRow>-->
+
+<!--            <TableRow android:layout_marginTop="@dimen/_10dp">-->
+<!--                <TextView android:text="Hello" android:layout_weight="1"/>-->
+<!--                <TextView android:text="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"/>-->
+<!--            </TableRow>-->
+
         </TableLayout>
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_marginTop="@dimen/_10dp"
             android:textStyle="bold"
             android:text="@string/user_reviews"

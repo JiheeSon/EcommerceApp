@@ -17,7 +17,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_email"
         android:text="@string/email_id"
         android:layout_marginTop="@dimen/_30dp"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_email_id"
         android:layout_marginTop="@dimen/_10dp"
         android:background="@drawable/background_edit_text"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_password"
         android:text="@string/password"
         android:layout_marginTop="@dimen/_30dp"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_password"
         android:layout_marginTop="@dimen/_10dp"
         android:background="@drawable/background_edit_text"
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_marginTop="@dimen/_10dp"
         android:id="@+id/text_forgot_password"
         android:text="@string/forget_password"
@@ -62,10 +62,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         android:text="@string/login"
         android:backgroundTint="@color/main_sky_blue"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_forgot_password"
@@ -73,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_no_account"
         android:text="@string/i_don_t_have_an_account"
         android:textColor="@color/light_orange"
