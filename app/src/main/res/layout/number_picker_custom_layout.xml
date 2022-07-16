@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:background="@android:color/white">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:layout_width="30dp"
         android:layout_height="match_parent"
         android:padding="0dp"
@@ -15,7 +15,7 @@
         android:textStyle="bold"
         android:text="—"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:layout_width="70dp"
         android:background="@android:color/white"
         android:layout_height="match_parent"
@@ -25,7 +25,8 @@
         android:id="@+id/display"
         android:gravity="center"
         />
-    <androidx.appcompat.widget.AppCompatButton
+
+    <Button
         android:layout_width="30dp"
         android:layout_height="match_parent"
         android:padding="0dp"

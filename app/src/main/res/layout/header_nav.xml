@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_welcome_user"
         tools:text="Welcom John"
-        android:textSize="@dimen/_20dp"
+        android:textSize="@dimen/_20sp"
         android:textColor="@color/light_orange"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -59,4 +59,5 @@ dependencies {
 
     implementation 'me.relex:circleindicator:2.1.6'
     implementation 'com.github.travijuu:numberpicker:1.0.7'
+    implementation 'com.google.android.material:material:1.6.1'
 }

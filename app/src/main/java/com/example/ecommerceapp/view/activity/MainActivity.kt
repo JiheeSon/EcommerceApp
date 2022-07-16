@@ -16,6 +16,7 @@ import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.model.storage.getLocalUserData
 import com.example.ecommerceapp.view.SplashScreen
 import com.example.ecommerceapp.view.addFragment
+import com.example.ecommerceapp.view.fragment.CartFragment
 import com.example.ecommerceapp.view.fragment.HomeFragment
 import com.example.ecommerceapp.view.replaceFragment
 
@@ -52,7 +53,10 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                     replaceFragment(R.id.framelayout, HomeFragment())
                 }
-                R.id.nav_cart -> Toast.makeText(this, "Cart", Toast.LENGTH_SHORT).show()
+                R.id.nav_cart -> {
+                    Toast.makeText(this, "Cart", Toast.LENGTH_SHORT).show()
+                    replaceFragment(R.id.framelayout, CartFragment())
+                }
                 R.id.nav_orders -> Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
                 R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.marginBottom
 import androidx.core.view.setMargins
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +24,7 @@ import com.example.ecommerceapp.view.adapter.ReviewAdapter
 class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetailView {
     private lateinit var binding: ActivityProductDetailBinding
     private lateinit var presenter: ProductDetailPresenter
+    private var amount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,15 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
         presenter = ProductDetailPresenter(ProductVolleyHandler(this), this)
 
         getProductDetail(productId)
+        setUpAmountCounter()
+    }
+
+    private fun setUpAmountCounter() {
+        binding.apply {
+            btnAddToCart.setOnClickListener {
+                TODO("add to cart activity")
+            }
+        }
     }
 
     private fun getProductDetail(productId: String) {

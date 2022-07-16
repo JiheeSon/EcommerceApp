@@ -19,4 +19,10 @@
     <string name="add_to_cart">ADD TO CART</string>
     <string name="specifications">Specifications</string>
     <string name="user_reviews">User Reviews</string>
+    <string name="_1">1</string>
+    <string name="decrement">—</string>
+    <string name="increment">+</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="total_bill_amount">Total Bill Amount</string>
+    <string name="checkout">CHECKOUT</string>
 </resources>
