@@ -47,7 +47,12 @@ class CartFragment : Fragment() {
             val adapter = CartItemAdapter(cartList)
             binding.recyclerViewProduct.layoutManager = LinearLayoutManager(view.context)
             binding.recyclerViewProduct.adapter = adapter
+
+            var totalBill = 0
+            for (item in cartList) {
+                totalBill += item.amount * item.productPrice.toInt()
+            }
+            binding.textTotalPrice.text = "$ $totalBill"
         }
     }
-
 }

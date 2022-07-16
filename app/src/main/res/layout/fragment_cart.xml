@@ -18,7 +18,7 @@
         android:text="@string/total_bill_amount" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/total_price"
+        android:id="@+id/text_total_price"
         tools:text="$ 640"
         android:textSize="@dimen/_30sp"
         android:textColor="@color/light_orange"

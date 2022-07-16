@@ -16,10 +16,11 @@ class CartItemAdapter(private val cartList: MutableList<CartItem>): RecyclerView
             binding.apply {
                 textProductName.text = cartItem.productName
                 textProductDescription.text = cartItem.productDescription
-                textUnitPrice.text = cartItem.productPrice
+                val unitPrice = "$ ${cartItem.productPrice}"
+                textUnitPrice.text = unitPrice
                 btnNumberPicker.value = cartItem.amount
-                val total = cartItem.productPrice.toInt() * cartItem.amount
-                textCumPrice.text = total.toString()
+                val total = "$ ${cartItem.productPrice.toInt() * cartItem.amount}"
+                textCumPrice.text = total
                 Glide.with(view.context)
                     .load(Constants.BASE_IMAGE_URL + cartItem.productImage)
                     .into(imageProduct)
@@ -34,7 +35,9 @@ class CartItemAdapter(private val cartList: MutableList<CartItem>): RecyclerView
     }
 
     override fun onBindViewHolder(holder: CartItemViewHolder, position: Int) {
-        holder.apply { bind(cartList[position]) }
+        holder.apply {
+            bind(cartList[position])
+        }
     }
 
     override fun getItemCount(): Int {
