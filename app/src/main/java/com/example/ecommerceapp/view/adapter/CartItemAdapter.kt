@@ -19,7 +19,7 @@ class CartItemAdapter(private val cartList: MutableList<CartItem>): RecyclerView
                 textUnitPrice.text = cartItem.productPrice
                 btnNumberPicker.value = cartItem.amount
                 val total = cartItem.productPrice.toInt() * cartItem.amount
-                textTotalPrice.text = total.toString()
+                textCumPrice.text = total.toString()
                 Glide.with(view.context)
                     .load(Constants.BASE_IMAGE_URL + cartItem.productImage)
                     .into(imageProduct)

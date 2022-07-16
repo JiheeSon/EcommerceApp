@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_total_price"
+            android:id="@+id/text_cum_price"
             tools:text="$ 200"
             android:textColor="@color/light_orange"
             android:textSize="@dimen/_20sp"
@@ -84,6 +84,7 @@
             numberpicker:max="10"
             numberpicker:value="0"
             numberpicker:unit="1"
+            numberpicker:custom_layout="@layout/number_picker_custom_layout"
             numberpicker:focusable="false"
             android:layout_marginTop="@dimen/_5dp"
             app:layout_constraintEnd_toEndOf="parent"
