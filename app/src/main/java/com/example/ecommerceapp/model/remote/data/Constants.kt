@@ -21,4 +21,5 @@ object Constants {
     const val PREF_NAME = "full_name"
     const val PREF_MOBILE = "mobile_no"
     const val PREF_USER_ID = "user_id"
+    const val PREF_CART = "cart"
 }

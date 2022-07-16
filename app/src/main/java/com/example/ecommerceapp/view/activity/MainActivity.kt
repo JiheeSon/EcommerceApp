@@ -30,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        addFragment(R.id.framelayout, HomeFragment())
+        if (intent.extras?.get("cart") != null) {
+            addFragment(R.id.framelayout, CartFragment())
+        } else {
+            addFragment(R.id.framelayout, HomeFragment())
+        }
         getUserInfo()
         initNavBar()
     }

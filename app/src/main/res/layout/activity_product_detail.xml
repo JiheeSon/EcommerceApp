@@ -95,7 +95,7 @@
                 android:layout_height="40dp"
                 numberpicker:min="0"
                 numberpicker:max="10"
-                numberpicker:value="0"
+                numberpicker:value="1"
                 numberpicker:unit="1"
                 numberpicker:focusable="false" />
 <!--            <androidx.appcompat.widget.AppCompatButton-->

@@ -4,12 +4,16 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.example.ecommerceapp.model.remote.data.CartItem
+import com.example.ecommerceapp.model.remote.data.Constants.PREF_CART
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_EMAIL
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_FILE_NAME
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_MOBILE
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_NAME
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_USER_ID
 import com.example.ecommerceapp.model.remote.data.User
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 fun getEncryptedPrefs(context: Context): SharedPreferences {
     val keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC
@@ -53,4 +57,29 @@ fun deleteLocalUserData(encryptedSharedPrefs: SharedPreferences): Boolean {
     val editor = encryptedSharedPrefs.edit()
     editor.clear()
     return editor.commit()
+}
+
+fun updateCartItemLocally(encryptedSharedPrefs: SharedPreferences, newItem: CartItem): Boolean {
+    val cartJson = encryptedSharedPrefs.getString(PREF_CART, "")
+    val gson = Gson()
+    val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
+    var newList: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
+    if (newList == null) {
+        newList = mutableListOf()
+        newList.add(newItem)
+    } else {
+        newList.add(newItem)
+    }
+
+    val editor = encryptedSharedPrefs.edit()
+    editor.putString(PREF_CART, gson.toJson(newList, token.type))
+    return editor.commit()
+}
+
+fun getCartItemLocally(encryptedSharedPrefs: SharedPreferences): MutableList<CartItem>? {
+    val cartJson = encryptedSharedPrefs.getString(PREF_CART, "")
+    val gson = Gson()
+    val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
+    val list: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
+    return list
 }

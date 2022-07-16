@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_product_price"
+            android:id="@+id/text_total_price"
             tools:text="$ 200"
             android:textColor="@color/light_orange"
             android:textSize="@dimen/_20sp"

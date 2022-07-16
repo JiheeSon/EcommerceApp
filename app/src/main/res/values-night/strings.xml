@@ -23,4 +23,5 @@
     <string name="unit_price">Unit Price</string>
     <string name="total_bill_amount">Total Bill Amount</string>
     <string name="checkout">CHECKOUT</string>
+    <string name="cart_is_empty">Cart is empty!</string>
 </resources>

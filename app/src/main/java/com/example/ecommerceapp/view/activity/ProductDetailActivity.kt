@@ -1,5 +1,7 @@
 package com.example.ecommerceapp.view.activity
 
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,14 +10,18 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.marginBottom
 import androidx.core.view.setMargins
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityProductDetailBinding
+import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
 import com.example.ecommerceapp.model.remote.data.product.*
 import com.example.ecommerceapp.model.remote.volleyhandler.ProductVolleyHandler
+import com.example.ecommerceapp.model.storage.getEncryptedPrefs
+import com.example.ecommerceapp.model.storage.updateCartItemLocally
 import com.example.ecommerceapp.presenter.productdetail.ProductDetailMVP
 import com.example.ecommerceapp.presenter.productdetail.ProductDetailPresenter
 import com.example.ecommerceapp.view.adapter.ProductDetailImageViewPagerAdapter
@@ -24,7 +30,8 @@ import com.example.ecommerceapp.view.adapter.ReviewAdapter
 class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetailView {
     private lateinit var binding: ActivityProductDetailBinding
     private lateinit var presenter: ProductDetailPresenter
-    private var amount = 1
+    private lateinit var encryptedSharedPreferences: SharedPreferences
+    private lateinit var productDetail: ProductX
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +42,44 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
         presenter = ProductDetailPresenter(ProductVolleyHandler(this), this)
 
         getProductDetail(productId)
-        setUpAmountCounter()
+
+        encryptedSharedPreferences = getEncryptedPrefs(this@ProductDetailActivity)
+        setUpEvents()
     }
 
-    private fun setUpAmountCounter() {
-        binding.apply {
-            btnAddToCart.setOnClickListener {
-                TODO("add to cart activity")
-            }
+    private fun setUpEvents() {
+        binding.btnAddToCart.setOnClickListener {
+            updateCartItemLocally(encryptedSharedPreferences,
+                CartItem(
+                    productDetail.product_id,
+                    productDetail.product_name,
+                    productDetail.description,
+                    productDetail.price,
+                    productDetail.product_image_url,
+                    binding.numberPicker.value
+                )
+            )
+            openCartDialog()
         }
+    }
+
+    private fun openCartDialog() {
+        val builder = AlertDialog.Builder(this)
+            .setTitle("Thank you!")
+            .setMessage("Successfully added to cart")
+            .setIcon(R.drawable.ic_baseline_shopping_cart_24)
+            .setNeutralButton("Keep Shopping", null)
+            .setPositiveButton("Go to Cart") { _, _ -> moveToCart() }
+        val alertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+    private fun moveToCart() {
+        val intent = Intent(this@ProductDetailActivity, MainActivity::class.java)
+        intent.putExtra("cart", true)
+        startActivity(intent)
+        finish()
     }
 
     private fun getProductDetail(productId: String) {
@@ -52,7 +88,7 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
 
     override fun setResult(data: Any, successed: Boolean) {
         if (successed) {
-            val productDetail = (data as ProductDetailResponse).product
+            productDetail = (data as ProductDetailResponse).product
             setUpViews(productDetail)
         }
     }
