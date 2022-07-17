@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.fragment
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,13 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.FragmentCartBinding
+import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.storage.getCartItemLocally
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
-import com.example.ecommerceapp.presenter.productdetail.ProductDetailPresenter
+import com.example.ecommerceapp.view.activity.CheckoutActivity
 import com.example.ecommerceapp.view.adapter.CartItemAdapter
-import com.example.ecommerceapp.view.adapter.ReviewAdapter
 
 class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
@@ -43,6 +43,7 @@ class CartFragment : Fragment() {
         val cartList = getCartItemLocally(encryptedSharedPreferences)
         if (cartList == null) {
             binding.textNoItem.visibility = View.VISIBLE
+            binding.btnCheckout.visibility = View.GONE
         } else {
             val adapter = CartItemAdapter(cartList)
             binding.recyclerViewProduct.layoutManager = LinearLayoutManager(view.context)
@@ -53,6 +54,12 @@ class CartFragment : Fragment() {
                 totalBill += item.amount * item.productPrice.toInt()
             }
             binding.textTotalPrice.text = "$ $totalBill"
+        }
+
+        binding.btnCheckout.setOnClickListener {
+            val intent = Intent(view.context, CheckoutActivity::class.java)
+            intent.putExtra("cart", cartList as ArrayList<CartItem>)
+            startActivity(intent)
         }
     }
 }

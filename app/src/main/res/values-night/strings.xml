@@ -24,4 +24,18 @@
     <string name="total_bill_amount">Total Bill Amount</string>
     <string name="checkout">CHECKOUT</string>
     <string name="cart_is_empty">Cart is empty!</string>
+    <string name="next">NEXT</string>
+    <string name="quantity">Quantity</string>
+    <string name="amount">Amount</string>
+    <string name="select_delivery_address">Select Delivery Address</string>
+    <string name="add_address">ADD ADDRESS</string>
+    <string name="select_payment_option">Select Payment Option</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="payment_option">Payment Option</string>
+    <string name="cart_items">Cart Items</string>
+    <string name="confirm_amp_place_order"><![CDATA[CONFIRM & PLACE ORDER]]></string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="internet_banking">Internet Banking</string>
+    <string name="debit_card_credit_card">Debit Card / Credit Card</string>
+    <string name="pay_pal">Pay Pal</string>
 </resources>

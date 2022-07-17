@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context=".view.fragment.PaymentFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_title"
+        android:text="@string/select_payment_option"
+        android:textSize="@dimen/_20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        android:layout_marginTop="@dimen/_30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="@string/cash_on_delivery"
+            android:buttonTint="@color/main_sky_blue"
+            android:background="@drawable/background_gray_boundary"
+            android:padding="@dimen/_20dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/selector_address_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="@string/internet_banking"
+            android:buttonTint="@color/main_sky_blue"
+            android:background="@drawable/background_gray_boundary"
+            android:padding="@dimen/_20dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/selector_address_toggle"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="@string/debit_card_credit_card"
+            android:buttonTint="@color/main_sky_blue"
+            android:background="@drawable/background_gray_boundary"
+            android:padding="@dimen/_20dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/selector_address_toggle"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="@string/pay_pal"
+            android:buttonTint="@color/main_sky_blue"
+            android:background="@drawable/background_gray_boundary"
+            android:padding="@dimen/_20dp"
+            android:button="@null"
+            android:drawableEnd="@drawable/selector_address_toggle"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/main_sky_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

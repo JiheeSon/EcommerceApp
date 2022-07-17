@@ -38,7 +38,7 @@ class SubCategoryActivity : AppCompatActivity(), SubCategoryMVP.SubCategoryView 
     }
 
     private fun setUpTabLayout() {
-        TabLayoutMediator(binding.tableLayoutSubCategory, binding.viewPagerSubCategory) {
+        TabLayoutMediator(binding.tabLayoutSubCategory, binding.viewPagerSubCategory) {
                 tab, position ->
             tab.text = subCategoryList[position].subcategory_name
         }.attach()
