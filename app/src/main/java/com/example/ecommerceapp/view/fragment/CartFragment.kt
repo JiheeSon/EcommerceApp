@@ -13,7 +13,7 @@ import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.storage.getCartItemLocally
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.view.activity.CheckoutActivity
-import com.example.ecommerceapp.view.adapter.CartItemAdapter
+import com.example.ecommerceapp.view.adapter.CartAdapter
 
 class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
@@ -45,7 +45,7 @@ class CartFragment : Fragment() {
             binding.textNoItem.visibility = View.VISIBLE
             binding.btnCheckout.visibility = View.GONE
         } else {
-            val adapter = CartItemAdapter(cartList)
+            val adapter = CartAdapter(cartList)
             binding.recyclerViewProduct.layoutManager = LinearLayoutManager(view.context)
             binding.recyclerViewProduct.adapter = adapter
 
