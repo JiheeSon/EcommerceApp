@@ -9,6 +9,8 @@ object Constants {
     const val SUB_CATEGORY_LIST_END_POINT = "SubCategory?category_id="
     const val SUB_CATEGORY_PRODUCT_END_POINT = "SubCategory/products/"
     const val PRODUCT_DETAIL_END_POINT = "Product/details/"
+    const val ADDRESS_END_POINT = "User/address"
+    const val ADDRESS_LIST_END_POINT = "User/addresses/"
 
     const val CATEGORY_ID = "category_id"
     const val SUB_CATEGORY_ID ="subcategory_id"
@@ -22,4 +24,7 @@ object Constants {
     const val PREF_MOBILE = "mobile_no"
     const val PREF_USER_ID = "user_id"
     const val PREF_CART = "cart"
+    const val PREF_CHECKOUT_ADDRESS_TITLE = "pref_checkout_address_title"
+    const val PREF_CHECKOUT_ADDRESS = "pref_checkout_address"
+    const val PREF_CHECKOUT_PAYMENT = "pref_checkout_paymet"
 }

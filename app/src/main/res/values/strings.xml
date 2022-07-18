@@ -40,4 +40,9 @@
     <string name="internet_banking">Internet Banking</string>
     <string name="debit_card_credit_card">Debit Card / Credit Card</string>
     <string name="pay_pal">Pay Pal</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="address_title">Address Title</string>
+    <string name="address">Address</string>
+    <string name="cancel">CANCEL</string>
+    <string name="save">SAVE</string>
 </resources>

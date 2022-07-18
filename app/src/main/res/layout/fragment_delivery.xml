@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_16dp"
+    android:id="@+id/fragment_delivery"
     tools:context=".view.fragment.DeliveryFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -17,14 +18,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_product"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_view_address"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/text_title"-->
+<!--        android:layout_marginTop="@dimen/_15dp"-->
+<!--        tools:listitem="@layout/item_delivery_address"-->
+<!--        tools:itemCount="2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+    <RadioGroup
+        android:id="@+id/rg_address_option"
         app:layout_constraintTop_toBottomOf="@id/text_title"
         android:layout_marginTop="@dimen/_15dp"
-        tools:listitem="@layout/item_delivery_address"
-        tools:itemCount="2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+    </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_add_address"
@@ -47,5 +56,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/circularProgressBar"
+        android:layout_width="@dimen/_120dp"
+        android:layout_height="@dimen/_120dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:indicatorDirectionCircular="clockwise"
+        app:indicatorSize="@dimen/_120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/main_sky_blue"
+        app:trackThickness="@dimen/_20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

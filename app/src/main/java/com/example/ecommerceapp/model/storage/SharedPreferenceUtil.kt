@@ -6,6 +6,9 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CART
+import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS
+import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS_TITLE
+import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_PAYMENT
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_EMAIL
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_FILE_NAME
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_MOBILE
@@ -82,4 +85,17 @@ fun getCartItemLocally(encryptedSharedPrefs: SharedPreferences): MutableList<Car
     val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
     val list: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
     return list
+}
+
+fun storeCheckoutDataLocally(editor: SharedPreferences.Editor, tag: String, data: String): Boolean {
+    editor.putString(tag, data)
+    return editor.commit()
+}
+
+fun getSummaryDataLocally(encryptedSharedPrefs: SharedPreferences): Array<String?> {
+    return arrayOf(
+        encryptedSharedPrefs.getString(PREF_CHECKOUT_ADDRESS_TITLE, ""),
+        encryptedSharedPrefs.getString(PREF_CHECKOUT_ADDRESS, ""),
+        encryptedSharedPrefs.getString(PREF_CHECKOUT_PAYMENT, "")
+    )
 }

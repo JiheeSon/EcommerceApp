@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
@@ -54,17 +55,14 @@ class MainActivity : AppCompatActivity() {
             binding.drawerLayoutNav.closeDrawer(GravityCompat.START)
             when (menuItems.itemId) {
                 R.id.nav_home -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                     replaceFragment(R.id.framelayout, HomeFragment())
                 }
                 R.id.nav_cart -> {
-                    Toast.makeText(this, "Cart", Toast.LENGTH_SHORT).show()
                     replaceFragment(R.id.framelayout, CartFragment())
                 }
                 R.id.nav_orders -> Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
                 R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
-                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
                     deleteLocalUserData(encryptedSharedPreferences)
                     startActivity(Intent(this@MainActivity, SplashScreen::class.java))
                 }

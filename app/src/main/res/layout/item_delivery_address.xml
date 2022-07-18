@@ -16,7 +16,7 @@
             android:textSize="@dimen/_15sp"
             android:textStyle="bold"
             android:fontFamily="monospace"
-            android:textColor="#535353"
+            android:textColor="@color/dark_gray"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_selected"
@@ -33,11 +33,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
 
-        <ToggleButton
+<!--        <ToggleButton-->
+<!--            android:id="@+id/btn_selected"-->
+<!--            android:background="@drawable/selector_address_toggle"-->
+<!--            android:textOff=""-->
+<!--            android:textOn=""-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"/>-->
+        <ImageView
             android:id="@+id/btn_selected"
-            android:background="@drawable/selector_address_toggle"
-            android:textOff=""
-            android:textOn=""
+            android:background="@drawable/ic_baseline_radio_button_unchecked_24"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
