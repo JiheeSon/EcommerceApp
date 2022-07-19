@@ -26,5 +26,7 @@ object Constants {
     const val PREF_CART = "cart"
     const val PREF_CHECKOUT_ADDRESS_TITLE = "pref_checkout_address_title"
     const val PREF_CHECKOUT_ADDRESS = "pref_checkout_address"
-    const val PREF_CHECKOUT_PAYMENT = "pref_checkout_paymet"
+    const val PREF_CHECKOUT_PAYMENT = "pref_checkout_payment"
+
+    const val PREF_CHECKOUT_FILE = "checkout-details"
 }

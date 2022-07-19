@@ -19,6 +19,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.DialogAddAddressBinding
 import com.example.ecommerceapp.databinding.FragmentDeliveryBinding
+import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS_TITLE
 import com.example.ecommerceapp.model.remote.data.address.AddressResponse
@@ -67,6 +68,7 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
         binding.btnNext.setOnClickListener {
             val index = binding.rgAddressOption.indexOfChild(binding.rgAddressOption.findViewById(binding.rgAddressOption.checkedRadioButtonId))
             val selected = addressList[index]
+
             storeCheckoutDataLocally(encryptedSharedPreferences.edit(), PREF_CHECKOUT_ADDRESS_TITLE, selected.title)
             storeCheckoutDataLocally(encryptedSharedPreferences.edit(), PREF_CHECKOUT_ADDRESS, selected.address)
             (activity as CheckoutActivity).slideViewPager()

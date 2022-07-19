@@ -9,8 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.ecommerceapp.R
+import com.example.ecommerceapp.databinding.DialogAddAddressBinding
 import com.example.ecommerceapp.databinding.FragmentPaymentBinding
+import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_FILE
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_PAYMENT
 import com.example.ecommerceapp.model.remote.data.address.Addresse
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
@@ -27,7 +30,7 @@ class PaymentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPaymentBinding.inflate(layoutInflater, container, false)
-        return inflater.inflate(R.layout.fragment_payment, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,10 +42,11 @@ class PaymentFragment : Fragment() {
 
     private fun setUpEvent() {
         binding.btnNext.setOnClickListener {
-            Log.i("jihee", "hi")
             val index = binding.rgPayment.indexOfChild(binding.rgPayment.findViewById(binding.rgPayment.checkedRadioButtonId))
-            storeCheckoutDataLocally(encryptedSharedPreferences.edit(), PREF_CHECKOUT_PAYMENT, paymentList[index])
-            (activity as CheckoutActivity).slideViewPager()
+            val a = storeCheckoutDataLocally(encryptedSharedPreferences.edit(), PREF_CHECKOUT_PAYMENT, paymentList[index])
+            when (a) {
+                true -> (activity as CheckoutActivity).slideViewPager()
+            }
         }
     }
 }

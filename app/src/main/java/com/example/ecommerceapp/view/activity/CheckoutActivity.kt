@@ -2,10 +2,12 @@ package com.example.ecommerceapp.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.viewpager2.widget.ViewPager2
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityCheckoutBinding
 import com.example.ecommerceapp.model.remote.data.address.Addresse
+import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.view.adapter.CheckoutViewPagerAdapter
 import com.example.ecommerceapp.view.fragment.SummaryFragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -13,6 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class CheckoutActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheckoutBinding
     private var tabList = arrayOf("Cart Items", "Delivery", "Payment", "Summary")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCheckoutBinding.inflate(layoutInflater)
@@ -59,5 +62,6 @@ class CheckoutActivity : AppCompatActivity() {
 
     fun slideViewPager() {
         findViewById<ViewPager2>(R.id.view_pager_checkout).currentItem = findViewById<ViewPager2>(R.id.view_pager_checkout).currentItem + 1
+        Log.i("jihee", findViewById<ViewPager2>(R.id.view_pager_checkout).currentItem.toString())
     }
 }
