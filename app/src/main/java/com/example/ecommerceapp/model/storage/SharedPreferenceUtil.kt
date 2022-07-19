@@ -99,3 +99,14 @@ fun getSummaryDataLocally(encryptedSharedPrefs: SharedPreferences): Array<String
         encryptedSharedPrefs.getString(PREF_CHECKOUT_PAYMENT, "")
     )
 }
+
+fun removedCartDataLocally(encryptedSharedPrefs: SharedPreferences): Boolean {
+    val editor = encryptedSharedPrefs.edit()
+    editor.apply {
+        remove(PREF_CART)
+        remove(PREF_CHECKOUT_ADDRESS)
+        remove(PREF_CHECKOUT_ADDRESS_TITLE)
+        remove(PREF_CHECKOUT_PAYMENT)
+    }
+    return editor.commit()
+}

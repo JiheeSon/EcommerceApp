@@ -1,70 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_16dp"
-    tools:context=".view.fragment.SummaryFragment">
+    tools:context=".view.activity.OrderConfirmActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_cart_items"
-            android:text="@string/cart_items"
-            android:textSize="@dimen/_20sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/orderId"
+            android:text="@string/order_id"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_30sp"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_order_id"
+            tools:text="#3246"
+            android:textSize="@dimen/_25sp"
+            android:textColor="@color/light_orange"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/orderId"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/orderStatus"
+            android:text="@string/order_status"
+            android:textSize="@dimen/_20sp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintTop_toBottomOf="@id/orderId"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_order_status"
+            tools:text="Confirmed"
+            android:textColor="@color/light_orange"
+            android:textSize="@dimen/_20sp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintTop_toBottomOf="@id/orderId"
+            app:layout_constraintStart_toStartOf="@id/text_order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purchasedItems"
+            android:text="@string/purchased_item"
+            android:textSize="@dimen/_20sp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintTop_toBottomOf="@id/orderStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_product"
-            app:layout_constraintTop_toBottomOf="@id/text_cart_items"
-            android:layout_marginTop="@dimen/_15dp"
+            app:layout_constraintTop_toBottomOf="@id/purchasedItems"
             tools:listitem="@layout/item_checkout_cart_items"
             tools:itemCount="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/text_total_bill_amount"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totallBillAmount"
             android:text="@string/total_bill_amount"
-            android:textSize="@dimen/_25sp"
-            android:textColor="@color/black"
+            android:textSize="@dimen/_20sp"
             android:layout_marginTop="@dimen/_10dp"
-            app:layout_constraintTop_toBottomOf="@id/recycler_view_product"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_price"
+            android:id="@+id/text_total_bill_amount"
             tools:text="$ 640"
             android:textColor="@color/light_orange"
-            android:textSize="@dimen/_25sp"
+            android:textSize="@dimen/_20sp"
             android:layout_marginTop="@dimen/_10dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recycler_view_product"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_delivery_address"
+            android:id="@+id/deliveryAddress"
             android:text="@string/delivery_address"
             android:textSize="@dimen/_20sp"
-            android:layout_marginTop="@dimen/_20dp"
-            app:layout_constraintTop_toBottomOf="@id/text_total_bill_amount"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintTop_toBottomOf="@id/totallBillAmount"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:id="@+id/linearlayout"
             android:layout_marginTop="@dimen/_10dp"
-            app:layout_constraintTop_toBottomOf="@id/text_delivery_address"
+            app:layout_constraintTop_toBottomOf="@id/deliveryAddress"
             android:background="@drawable/background_gray_boundary"
             android:padding="@dimen/_10dp"
             android:orientation="vertical"
@@ -111,8 +150,8 @@
             android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_confirm"
-            android:text="@string/confirm_amp_place_order"
+            android:id="@+id/btn_cancel"
+            android:text="@string/cancel_order"
             android:layout_marginTop="@dimen/_20dp"
             app:layout_constraintTop_toBottomOf="@id/text_payment_option"
             android:textColor="@color/white"
@@ -120,21 +159,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/circularProgressBar"
-            android:layout_width="@dimen/_120dp"
-            android:layout_height="@dimen/_120dp"
-            android:indeterminate="true"
-            android:visibility="gone"
-            app:indicatorColor="@color/white"
-            app:indicatorDirectionCircular="clockwise"
-            app:indicatorSize="@dimen/_120dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:trackColor="@color/light_orange"
-            app:trackThickness="@dimen/_20dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

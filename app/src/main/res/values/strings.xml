@@ -45,4 +45,8 @@
     <string name="address">Address</string>
     <string name="cancel">CANCEL</string>
     <string name="save">SAVE</string>
+    <string name="order_id">Order ID</string>
+    <string name="order_status">Order status</string>
+    <string name="purchased_item">Purchased Item</string>
+    <string name="cancel_order">CANCEL ORDER</string>
 </resources>
