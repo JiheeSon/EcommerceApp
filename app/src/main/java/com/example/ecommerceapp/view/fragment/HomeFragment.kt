@@ -56,9 +56,13 @@ class HomeFragment : Fragment(), CategoryMVP.CategoryView {
 
     private fun setUpSearch(view: View) {
         binding.btnSearch.setOnClickListener {
+            val bundle = Bundle(1)
+            val fragment = SearchFragment()
+            bundle.putString("query", binding.editSearch.text.toString())
+            fragment.arguments = bundle
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.framelayout, SearchFragment())
+                ?.replace(R.id.framelayout, fragment)
                 ?.addToBackStack(null)
                 ?.commit()
         }

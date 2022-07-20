@@ -46,12 +46,29 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
-        android:id="@+id/framelayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_product"
+        tools:listitem="@layout/item_product"
         android:layout_marginTop="@dimen/_10dp"
         app:layout_constraintTop_toBottomOf="@id/search_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/circularProgressBar"
+        android:layout_width="@dimen/_120dp"
+        android:layout_height="@dimen/_120dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:indicatorDirectionCircular="clockwise"
+        app:indicatorSize="@dimen/_120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/light_orange"
+        app:trackThickness="@dimen/_20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
