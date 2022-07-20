@@ -1,11 +1,11 @@
 package com.example.ecommerceapp.view.fragment
 
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.FragmentHomeBinding
 import com.example.ecommerceapp.model.remote.data.category.Category
 import com.example.ecommerceapp.model.remote.data.category.CategoryResponse
@@ -29,14 +29,44 @@ class HomeFragment : Fragment(), CategoryMVP.CategoryView {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true)
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_search, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_search) {
+            binding.searchLayout.visibility = View.VISIBLE
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setUpEvents(view)
+        setUpSearch(view)
+    }
+
+    private fun setUpSearch(view: View) {
+        binding.btnSearch.setOnClickListener {
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.framelayout, SearchFragment())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+        binding.btnClose.setOnClickListener {
+            binding.editSearch.text = null
+            binding.searchLayout.visibility = View.GONE
+        }
+
     }
 
     private fun setUpEvents(view: View) {

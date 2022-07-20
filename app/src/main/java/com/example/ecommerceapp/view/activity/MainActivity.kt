@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
@@ -16,11 +15,7 @@ import com.example.ecommerceapp.model.storage.deleteLocalUserData
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.model.storage.getLocalUserData
 import com.example.ecommerceapp.view.SplashScreen
-import com.example.ecommerceapp.view.addFragment
-import com.example.ecommerceapp.view.fragment.CartFragment
-import com.example.ecommerceapp.view.fragment.HomeFragment
-import com.example.ecommerceapp.view.fragment.OrdersFragment
-import com.example.ecommerceapp.view.replaceFragment
+import com.example.ecommerceapp.view.fragment.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -91,4 +86,5 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
 }

@@ -14,6 +14,7 @@ object Constants {
     const val ORDER_PLACE_END_POINT = "Order"
     const val ORDER_LIST_END_POINT = "Order/userOrders/"
     const val ORDER_DETAIL_END_POINT = "Order?order_id="
+    const val SEARCH_END_POINT = "Product/search?query="
 
     const val CATEGORY_ID = "category_id"
     const val SUB_CATEGORY_ID ="subcategory_id"

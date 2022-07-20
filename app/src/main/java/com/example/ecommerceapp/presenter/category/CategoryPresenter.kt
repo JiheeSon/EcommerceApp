@@ -8,6 +8,7 @@ import com.example.ecommerceapp.model.remote.volleyhandler.CategoryVolleyHandler
 
 class CategoryPresenter(private val volleyHandler: CategoryVolleyHandler, private val categoryView: CategoryMVP.CategoryView): CategoryMVP.CategoryPresenter {
     override fun loadCategoryList(): String {
+        categoryView.onLoad(true)
         val message = volleyHandler.callProductCategoryApi(
             object : OperationalCallback {
                 override fun onSuccess(data: Any) {
