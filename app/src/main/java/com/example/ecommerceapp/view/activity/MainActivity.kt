@@ -19,6 +19,7 @@ import com.example.ecommerceapp.view.SplashScreen
 import com.example.ecommerceapp.view.addFragment
 import com.example.ecommerceapp.view.fragment.CartFragment
 import com.example.ecommerceapp.view.fragment.HomeFragment
+import com.example.ecommerceapp.view.fragment.OrdersFragment
 import com.example.ecommerceapp.view.replaceFragment
 
 class MainActivity : AppCompatActivity() {
@@ -54,13 +55,9 @@ class MainActivity : AppCompatActivity() {
             //menuItems.isChecked = true
             binding.drawerLayoutNav.closeDrawer(GravityCompat.START)
             when (menuItems.itemId) {
-                R.id.nav_home -> {
-                    replaceFragment(R.id.framelayout, HomeFragment())
-                }
-                R.id.nav_cart -> {
-                    replaceFragment(R.id.framelayout, CartFragment())
-                }
-                R.id.nav_orders -> Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
+                R.id.nav_home -> replaceFragment(R.id.framelayout, HomeFragment())
+                R.id.nav_cart -> replaceFragment(R.id.framelayout, CartFragment())
+                R.id.nav_orders -> replaceFragment(R.id.framelayout, OrdersFragment())
                 R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
                     deleteLocalUserData(encryptedSharedPreferences)

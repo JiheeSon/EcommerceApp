@@ -47,4 +47,9 @@
     <string name="order_status">Order status</string>
     <string name="purchased_item">Purchased Item</string>
     <string name="cancel_order">CANCEL ORDER</string>
+    <string name="bill">Bill</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="order_date">Order Date</string>
+    <string name="no_orders_placed">No Orders Placed</string>
+    <string name="status">Status</string>
 </resources>
