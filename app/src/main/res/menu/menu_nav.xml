@@ -3,18 +3,23 @@
     <group>
     <item
         android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home" />
     <item
         android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="@string/cart" />
     <item
         android:id="@+id/nav_orders"
+        android:icon="@drawable/ic_baseline_local_shipping_24"
         android:title="@string/orders" />
     <item
         android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_baseline_person_pin_24"
         android:title="@string/profile" />
     <item
         android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_baseline_logout_24"
         android:title="@string/logout" />
     </group>
 </menu>
