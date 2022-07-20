@@ -12,12 +12,14 @@ import com.android.volley.toolbox.Volley
 import com.example.ecommerceapp.model.remote.OperationalCallback
 import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_URL
+import com.example.ecommerceapp.model.remote.data.Constants.ORDER_DETAIL_END_POINT
 import com.example.ecommerceapp.model.remote.data.Constants.ORDER_LIST_END_POINT
 import com.example.ecommerceapp.model.remote.data.Constants.ORDER_PLACE_END_POINT
 import com.example.ecommerceapp.model.remote.data.Constants.TAG_DEV
 import com.example.ecommerceapp.model.remote.data.order.OrderInput
 import com.example.ecommerceapp.model.remote.data.order.OrderResponse
 import com.example.ecommerceapp.model.remote.data.orderList.OrderListResponse
+import com.example.ecommerceapp.model.remote.data.orderdetail.OrderDetailResponse
 import com.example.ecommerceapp.model.remote.data.product.ProductDetailResponse
 import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryListResponse
 import com.google.gson.Gson
@@ -57,6 +59,25 @@ class OrderVolleyHandler(private val context: Context) {
                 message = it.toString()
                 val orderListResponse = gson.fromJson(message, OrderListResponse::class.java)
                 callback.onSuccess(orderListResponse)
+            }) {
+            message = it.toString()
+            callback.onFailure(it.toString())
+        }
+
+        requestQueue.add(request)
+        return message.toString()
+    }
+
+    fun callOrderDetailApi(orderId: String, callback: OperationalCallback): String {
+        val url = BASE_URL + ORDER_DETAIL_END_POINT + orderId
+        var message: String? = null
+        val gson = Gson()
+
+        val request = StringRequest(Request.Method.GET, url,
+            Response.Listener {
+                message = it.toString()
+                val orderDetailResponse = gson.fromJson(message, OrderDetailResponse::class.java)
+                callback.onSuccess(orderDetailResponse)
             }) {
             message = it.toString()
             callback.onFailure(it.toString())
