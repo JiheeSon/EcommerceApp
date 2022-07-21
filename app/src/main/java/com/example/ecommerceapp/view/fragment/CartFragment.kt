@@ -19,10 +19,6 @@ class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private lateinit var encryptedSharedPreferences: SharedPreferences
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +37,7 @@ class CartFragment : Fragment() {
 
     private fun setUpViews(view: View) {
         val cartList = getCartItemLocally(encryptedSharedPreferences)
-        if (cartList == null) {
+        if (cartList!!.isEmpty()) {
             binding.textNoItem.visibility = View.VISIBLE
             binding.btnCheckout.visibility = View.GONE
         } else {

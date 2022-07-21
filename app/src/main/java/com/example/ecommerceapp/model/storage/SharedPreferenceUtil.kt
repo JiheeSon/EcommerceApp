@@ -62,16 +62,48 @@ fun deleteLocalUserData(encryptedSharedPrefs: SharedPreferences): Boolean {
     return editor.commit()
 }
 
-fun updateCartItemLocally(encryptedSharedPrefs: SharedPreferences, newItem: CartItem): Boolean {
+fun addCartItemLocally(encryptedSharedPrefs: SharedPreferences, newItem: CartItem): Boolean {
     val cartJson = encryptedSharedPrefs.getString(PREF_CART, "")
     val gson = Gson()
     val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
     var newList: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
+    var added = false
     if (newList == null) {
         newList = mutableListOf()
         newList.add(newItem)
     } else {
-        newList.add(newItem)
+        for (i in newList.indices) {
+            if (newList[i].productId == newItem.productId) {
+                val copy = CartItem(
+                    newItem.productId,
+                    newItem.productName,
+                    newItem.productDescription,
+                    newItem.productPrice,
+                    newItem.productImage,
+                    newItem.amount + newList[i].amount
+                )
+                newList[i] = copy
+                added = true
+            }
+        }
+        if (!added) newList.add(newItem)
+    }
+
+    val editor = encryptedSharedPrefs.edit()
+    editor.putString(PREF_CART, gson.toJson(newList, token.type))
+    return editor.commit()
+}
+
+fun updateCartItemLocally(encryptedSharedPrefs: SharedPreferences, newItem: CartItem): Boolean {
+    val cartJson = encryptedSharedPrefs.getString(PREF_CART, "")
+    val gson = Gson()
+    val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
+    val newList: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
+
+    for (i in newList!!.indices) {
+        if (newList[i].productId == newItem.productId) {
+            newList[i] = newItem
+        }
     }
 
     val editor = encryptedSharedPrefs.edit()
@@ -85,6 +117,22 @@ fun getCartItemLocally(encryptedSharedPrefs: SharedPreferences): MutableList<Car
     val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
     val list: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
     return list
+}
+
+fun removeCartItemLocally(encryptedSharedPrefs: SharedPreferences, productId: String): Boolean {
+    val cartJson = encryptedSharedPrefs.getString(PREF_CART, "")
+    val gson = Gson()
+    val token: TypeToken<MutableList<CartItem>> = object : TypeToken<MutableList<CartItem>>() {}
+    val newList: MutableList<CartItem>? = gson.fromJson(cartJson, token.type)
+
+    for (i in newList!!.indices) {
+        if (newList[i].productId == productId) {
+            newList.remove(newList[i])
+        }
+    }
+    val editor = encryptedSharedPrefs.edit()
+    editor.putString(PREF_CART, gson.toJson(newList, token.type))
+    return editor.commit()
 }
 
 fun storeCheckoutDataLocally(editor: SharedPreferences.Editor, tag: String, data: String): Boolean {

@@ -4,16 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.marginBottom
-import androidx.core.view.setMargins
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityProductDetailBinding
@@ -22,7 +17,7 @@ import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
 import com.example.ecommerceapp.model.remote.data.product.*
 import com.example.ecommerceapp.model.remote.volleyhandler.ProductVolleyHandler
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
-import com.example.ecommerceapp.model.storage.updateCartItemLocally
+import com.example.ecommerceapp.model.storage.addCartItemLocally
 import com.example.ecommerceapp.presenter.productdetail.ProductDetailMVP
 import com.example.ecommerceapp.presenter.productdetail.ProductDetailPresenter
 import com.example.ecommerceapp.view.adapter.ProductDetailImageViewPagerAdapter
@@ -50,7 +45,7 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
 
     private fun setUpEvents() {
         binding.btnAddToCart.setOnClickListener {
-            updateCartItemLocally(encryptedSharedPreferences,
+            addCartItemLocally(encryptedSharedPreferences,
                 CartItem(
                     productDetail.product_id,
                     productDetail.product_name,

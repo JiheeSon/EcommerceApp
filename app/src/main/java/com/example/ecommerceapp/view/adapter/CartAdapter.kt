@@ -3,14 +3,19 @@ package com.example.ecommerceapp.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ItemCartProductBinding
 import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.remote.data.Constants
+import com.example.ecommerceapp.model.storage.getEncryptedPrefs
+import com.example.ecommerceapp.model.storage.removeCartItemLocally
+import com.example.ecommerceapp.model.storage.updateCartItemLocally
+import com.example.ecommerceapp.view.fragment.CartFragment
 
-class CartAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class CartAdapter(private var cartList: MutableList<CartItem>): RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private lateinit var binding: ItemCartProductBinding
     inner class CartViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun bind(cartItem: CartItem) {
@@ -28,6 +33,31 @@ class CartAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Ada
                     .error(R.drawable.ic_baseline_image_not_supported_24)
                     .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)
+
+                btnNumberPicker.setValueChangedListener { value, action ->
+                    val encryptedSharedPreferences = getEncryptedPrefs(view.context)
+
+                    if (value == 0) {
+                        val builder = AlertDialog.Builder(view.context)
+                            .setTitle("Wait!")
+                            .setIcon(R.drawable.ic_baseline_shopping_cart_24)
+                            .setMessage("Want to remove this item from the cart?")
+                            .setPositiveButton("Confirm") {_, _ ->
+                                removeCartItemLocally(encryptedSharedPreferences, cartItem.productId)
+                                val idx = cartList.indexOf(cartItem)
+                                cartList.remove(cartItem)
+                                notifyItemRemoved(idx)
+                            }
+                            .setNeutralButton("Cancel") {_, _ -> binding.btnNumberPicker.value = 1}
+                        val alertDialog = builder.create()
+                        alertDialog.setCancelable(false)
+                        alertDialog.show()
+                    } else {
+                        val copy = cartItem
+                        copy.amount = value
+                        updateCartItemLocally(encryptedSharedPreferences, copy)
+                    }
+                }
             }
         }
     }
