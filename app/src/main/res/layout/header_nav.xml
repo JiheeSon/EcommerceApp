@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_16dp"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_welcome_user"
+        android:textStyle="italic"
         tools:text="Welcom John"
-        android:textSize="@dimen/_20sp"
+        android:textSize="@dimen/_25sp"
         android:textColor="@color/light_orange"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,8 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_user_email"
         tools:text="john.parker@gmail.com"
-        android:layout_marginTop="@dimen/_3dp"
+        android:layout_marginTop="@dimen/_15dp"
+        android:textSize="@dimen/_15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_welcome_user"
         android:layout_width="wrap_content"
@@ -28,7 +30,8 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/header_user_mobile"
         tools:text="+1 8799 8582 41"
-        android:layout_marginTop="@dimen/_3dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:textSize="@dimen/_15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_user_email"
         android:layout_width="wrap_content"

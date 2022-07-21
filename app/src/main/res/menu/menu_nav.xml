@@ -13,10 +13,10 @@
         android:id="@+id/nav_orders"
         android:icon="@drawable/ic_baseline_local_shipping_24"
         android:title="@string/orders" />
-    <item
-        android:id="@+id/nav_profile"
-        android:icon="@drawable/ic_baseline_person_pin_24"
-        android:title="@string/profile" />
+<!--    <item-->
+<!--        android:id="@+id/nav_profile"-->
+<!--        android:icon="@drawable/ic_baseline_person_pin_24"-->
+<!--        android:title="@string/profile" />-->
     <item
         android:id="@+id/nav_logout"
         android:icon="@drawable/ic_baseline_logout_24"

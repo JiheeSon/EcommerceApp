@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(R.id.framelayout, HomeFragment())
                 R.id.nav_cart -> replaceFragment(R.id.framelayout, CartFragment())
                 R.id.nav_orders -> replaceFragment(R.id.framelayout, OrdersFragment())
-                R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
+                //R.id.nav_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
                     deleteLocalUserData(encryptedSharedPreferences)
                     startActivity(Intent(this@MainActivity, SplashScreen::class.java))
