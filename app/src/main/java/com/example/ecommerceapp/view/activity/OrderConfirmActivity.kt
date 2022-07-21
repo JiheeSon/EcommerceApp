@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -43,6 +44,11 @@ class OrderConfirmActivity : AppCompatActivity(), OrderDetailMVP.OrderDetailView
 
             recyclerViewProduct.layoutManager = LinearLayoutManager(baseContext)
             recyclerViewProduct.adapter = adapter
+        }
+
+        binding.btnHome.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 

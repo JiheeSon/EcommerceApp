@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jihee/.gradle/caches/transforms-3/7f59592c03daa63bc66e6d6259e72866/transformed/numberpicker-1.0.7/res/drawable/border_gray.xml" value="0.124" />
         <entry key="..\:/Users/jihee/.gradle/caches/transforms-3/7f59592c03daa63bc66e6d6259e72866/transformed/numberpicker-1.0.7/res/layout/number_picker_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1865" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/background_blue_boundary.xml" value="0.1235" />
@@ -29,7 +30,7 @@
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/shape_circleindicator.xml" value="0.1" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_checkout.xml" value="0.12" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.136" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_order_confirm.xml" value="0.23825503355704697" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_product_detail.xml" value="0.2" />
@@ -46,7 +47,7 @@
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/fragment_search.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/fragment_sub_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/fragment_summary.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/header_nav.xml" value="0.4" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/header_nav.xml" value="0.12" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/item_cart_items.xml" value="0.253125" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/item_cart_product.xml" value="0.2" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/item_category.xml" value="0.253125" />

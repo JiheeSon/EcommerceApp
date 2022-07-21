@@ -55,6 +55,11 @@ class SearchFragment : Fragment(), SearchMVP.SearchView {
         val adapter = ProductAdapter(subCategoryProductListResponse.products)
         binding.recyclerViewProduct.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewProduct.adapter = adapter
+        if (subCategoryProductListResponse.products.isEmpty()) {
+            binding.noSearchResult.visibility = View.VISIBLE
+        } else {
+            binding.noSearchResult.visibility = View.GONE
+        }
     }
 
     override fun setResult(message: String) {

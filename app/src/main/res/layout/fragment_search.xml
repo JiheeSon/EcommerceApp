@@ -46,6 +46,18 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_search_result"
+        android:text="No Search Result \n Try again"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textSize="@dimen/_30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_product"
         tools:listitem="@layout/item_product"
