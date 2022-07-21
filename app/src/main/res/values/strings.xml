@@ -56,4 +56,6 @@
     <string name="status">Status</string>
     <string name="search">Search</string>
     <string name="no_reviews_on_this_item_yet">No reviews on this item yet!</string>
+    <string name="super_cart">Super Cart</string>
+    <string name="welcome">Welcome</string>
 </resources>
