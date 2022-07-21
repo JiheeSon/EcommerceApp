@@ -14,8 +14,7 @@ The app in itself is a simple shopping app. Clicking the product list item it sh
 
 ## 💻Technologies  
 - SharedPref to save data of login details
-- SQLite to save the use details
-- MVP as acchitecture of app
+- MVP as achitecture of app
 - Volley to request API of app
 - Glide for fetching product images
 - Material design
