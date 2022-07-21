@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityLoginBinding
+import com.example.ecommerceapp.model.local.UserDao
+import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 import com.example.ecommerceapp.presenter.login.LoginMVP
 import com.example.ecommerceapp.presenter.login.LoginPresenter
@@ -52,7 +54,6 @@ class LoginActivity : AppCompatActivity(), LoginMVP.LoginView {
     }
 
     override fun setResult(status: Int, message: String) {
-
         if (status == 0) {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()

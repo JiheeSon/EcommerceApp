@@ -77,6 +77,13 @@ class UserVolleyHandler(private val context: Context) {
                         user.getString("mobile_no"),
                         user.getString("email_id")
                     )
+                    val userObject = User(
+                        user.getString("user_id"),
+                        user.getString("full_name"),
+                        user.getString("mobile_no"),
+                        user.getString("email_id"),
+                        password
+                    )
                 }
                 callback.onSuccess(status, message.toString())
             }, { error: VolleyError ->

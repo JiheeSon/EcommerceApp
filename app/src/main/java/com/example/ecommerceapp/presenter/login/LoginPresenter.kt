@@ -2,6 +2,7 @@ package com.example.ecommerceapp.presenter.login
 
 import com.example.ecommerceapp.model.remote.OperationalCallback
 import com.example.ecommerceapp.model.remote.UserOperationalCallback
+import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.remote.volleyhandler.UserVolleyHandler
 
 class LoginPresenter

@@ -1,5 +1,7 @@
 package com.example.ecommerceapp.presenter.login
 
+import com.example.ecommerceapp.model.remote.data.User
+
 interface LoginMVP {
     interface LoginPresenter {
         fun loginUser(email: String, password: String): String

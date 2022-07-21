@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ActivityMainBinding
+import com.example.ecommerceapp.model.local.UserDao
 import com.example.ecommerceapp.model.remote.data.User
 import com.example.ecommerceapp.model.storage.deleteLocalUserData
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
@@ -39,7 +40,13 @@ class MainActivity : AppCompatActivity() {
     private fun getUserInfo() {
         encryptedSharedPreferences = getEncryptedPrefs(this@MainActivity)
         userInfo = getLocalUserData(encryptedSharedPreferences)
+        //doUserDBWork(userInfo)
     }
+
+//    private fun doUserDBWork(userInfo: User) {
+//        val userDao = UserDao(this)
+//        val id = userDao.addUserToDatabase(userInfo)
+//    }
 
     private fun initNavBar() {
         //setSupportActionBar(binding.toolbar)
