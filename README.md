@@ -13,8 +13,10 @@ The app in itself is a simple shopping app. Clicking the product list item it sh
 
 ## 📸 Screenshots
 
-**Please click the image below to enlarge.**
-
+**Please click the image below to enlarge.**  
+<img src="https://user-images.githubusercontent.com/58560069/180140248-47fc682b-9ab2-4558-951b-bd86d4f52f02.png"  width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/58560069/180141003-56ffa33d-09c0-44d9-b910-35d7ea2a4a07.png"  width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/58560069/180141131-193d1d1e-f9fe-474b-8a8a-8cae3ddc4a70.png"  width="200" height="400"/>
 
 ## Built With 🛠
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
