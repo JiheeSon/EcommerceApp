@@ -24,6 +24,7 @@ class CartAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Ada
                 textCumPrice.text = total
                 Glide.with(view.context)
                     .load(Constants.BASE_IMAGE_URL + cartItem.productImage)
+                    .placeholder(R.drawable.ic_baseline_image_not_supported_24)
                     .error(R.drawable.ic_baseline_image_not_supported_24)
                     .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)

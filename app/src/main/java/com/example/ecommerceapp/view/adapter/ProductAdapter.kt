@@ -21,6 +21,7 @@ class ProductAdapter(private val productList: ArrayList<Product>): RecyclerView.
             binding.apply {
                 Glide.with(view.context)
                     .load(BASE_IMAGE_URL + product.product_image_url)
+                    .placeholder(R.drawable.ic_baseline_image_not_supported_24)
                     .error(R.drawable.ic_baseline_image_not_supported_24)
                     .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)

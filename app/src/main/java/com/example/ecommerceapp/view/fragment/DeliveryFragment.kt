@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.fragment
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Typeface
 import android.os.Bundle
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.DialogAddAddressBinding
 import com.example.ecommerceapp.databinding.FragmentDeliveryBinding
+import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS_TITLE
 import com.example.ecommerceapp.model.remote.data.address.AddressResponse
@@ -49,6 +51,7 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
         super.onViewCreated(view, savedInstanceState)
 
         encryptedSharedPreferences = getEncryptedPrefs(view.context)
+
         userId = getLocalUserData(encryptedSharedPreferences).user_id.toString()
         setUpEvents(view)
     }

@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.view.fragment
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecommerceapp.databinding.FragmentCartItemsBinding
+import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.storage.getCartItemLocally
 import com.example.ecommerceapp.model.storage.getEncryptedPrefs
 import com.example.ecommerceapp.view.activity.CheckoutActivity
@@ -16,10 +18,6 @@ import com.example.ecommerceapp.view.adapter.CartItemAdapter
 class CartItemsFragment : Fragment() {
     private lateinit var binding: FragmentCartItemsBinding
     private lateinit var encryptedSharedPreferences: SharedPreferences
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +32,7 @@ class CartItemsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         encryptedSharedPreferences = getEncryptedPrefs(view.context)
+
         setUpViews(view)
     }
 

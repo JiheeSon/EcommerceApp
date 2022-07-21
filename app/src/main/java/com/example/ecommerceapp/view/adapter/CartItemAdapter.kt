@@ -26,6 +26,7 @@ class CartItemAdapter(private val itemList: MutableList<CartItem>): RecyclerView
 
                 Glide.with(view.context)
                     .load(Constants.BASE_IMAGE_URL + cartItem.productImage)
+                    .placeholder(R.drawable.ic_baseline_image_not_supported_24)
                     .error(R.drawable.ic_baseline_image_not_supported_24)
                     .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)
