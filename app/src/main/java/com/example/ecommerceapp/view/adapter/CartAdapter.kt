@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ItemCartProductBinding
 import com.example.ecommerceapp.model.remote.data.CartItem
 import com.example.ecommerceapp.model.remote.data.Constants
@@ -23,6 +24,8 @@ class CartAdapter(private val cartList: MutableList<CartItem>): RecyclerView.Ada
                 textCumPrice.text = total
                 Glide.with(view.context)
                     .load(Constants.BASE_IMAGE_URL + cartItem.productImage)
+                    .error(R.drawable.ic_baseline_image_not_supported_24)
+                    .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)
             }
         }

@@ -55,4 +55,5 @@
     <string name="no_orders_placed">No Orders Placed</string>
     <string name="status">Status</string>
     <string name="search">Search</string>
+    <string name="no_reviews_on_this_item_yet">No reviews on this item yet!</string>
 </resources>

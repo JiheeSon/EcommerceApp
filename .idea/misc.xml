@@ -20,6 +20,7 @@
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.154" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_baseline_search_24_blue.xml" value="0.154" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.1" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_baseline_subtitles_off_24.xml" value="0.1515" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1865" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.204" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/drawable/selector_address_toggle.xml" value="0.1535" />
@@ -29,7 +30,7 @@
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_login.xml" value="0.136" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_order_confirm.xml" value="0.23825503355704697" />
-        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_product_detail.xml" value="0.176" />
+        <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_product_detail.xml" value="0.2" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_registration.xml" value="0.264" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/activity_sub_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/jihee/AndroidStudioProjects/EcommerceApp/app/src/main/res/layout/dialog_add_address.xml" value="0.253125" />

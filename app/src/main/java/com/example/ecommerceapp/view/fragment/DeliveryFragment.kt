@@ -1,6 +1,5 @@
 package com.example.ecommerceapp.view.fragment
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Typeface
 import android.os.Bundle
@@ -19,7 +18,6 @@ import androidx.appcompat.app.AlertDialog
 import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.DialogAddAddressBinding
 import com.example.ecommerceapp.databinding.FragmentDeliveryBinding
-import com.example.ecommerceapp.model.remote.data.Constants
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS
 import com.example.ecommerceapp.model.remote.data.Constants.PREF_CHECKOUT_ADDRESS_TITLE
 import com.example.ecommerceapp.model.remote.data.address.AddressResponse
@@ -36,7 +34,6 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
     private lateinit var binding: FragmentDeliveryBinding
     private lateinit var presenter: DeliveryPresenter
     private lateinit var encryptedSharedPreferences: SharedPreferences
-    //private lateinit var adapter: AddressAdapter
     private lateinit var userId: String
     private lateinit var addressList: List<Addresse>
 
@@ -44,7 +41,6 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentDeliveryBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -102,10 +98,6 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
     override fun setResult(addressResponse: AddressResponse) {
         addressList = addressResponse.addresses
         setUpRadioButtons()
-//        adapter = AddressAdapter(addressResponse.addresses)
-//        binding.recyclerViewAddress.layoutManager = LinearLayoutManager(context)
-//        binding.recyclerViewAddress.adapter = adapter
-//        adapter.notifyItemInserted(addressResponse.addresses.size-1)
     }
 
     private fun setUpRadioButtons() {

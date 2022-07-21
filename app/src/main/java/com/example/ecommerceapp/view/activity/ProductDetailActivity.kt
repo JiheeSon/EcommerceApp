@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TableLayout
 import android.widget.TableRow
@@ -136,6 +137,9 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
         val adapter = ReviewAdapter(reviews)
         binding.recyclerViewReview.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewReview.adapter = adapter
+        if (reviews.isEmpty()) {
+            binding.noReviews.visibility = View.VISIBLE
+        }
     }
 
     private fun setUpImageViewPager(images: ArrayList<Image>) {
@@ -145,6 +149,10 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
     }
 
     override fun onLoad(isLoading: Boolean) {
-        Log.i("tag", isLoading.toString())
+        if (isLoading) {
+            binding.circularProgressBar.visibility = View.VISIBLE
+        } else {
+            binding.circularProgressBar.visibility = View.GONE
+        }
     }
 }

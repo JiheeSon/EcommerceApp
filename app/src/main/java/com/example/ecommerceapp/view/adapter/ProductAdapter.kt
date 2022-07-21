@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ItemProductBinding
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
 import com.example.ecommerceapp.model.remote.data.Constants.PRODUCT_ID
@@ -20,6 +21,8 @@ class ProductAdapter(private val productList: ArrayList<Product>): RecyclerView.
             binding.apply {
                 Glide.with(view.context)
                     .load(BASE_IMAGE_URL + product.product_image_url)
+                    .error(R.drawable.ic_baseline_image_not_supported_24)
+                    .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imageProduct)
                 textProductName.text = product.product_name
                 textProductDescription.text = product.description

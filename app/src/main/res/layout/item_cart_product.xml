@@ -8,6 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="@dimen/_10dp"
+        android:padding="@dimen/_5dp"
+        android:background="@drawable/background_gray_boundary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

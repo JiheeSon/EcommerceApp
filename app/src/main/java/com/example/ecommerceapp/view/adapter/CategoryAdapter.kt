@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.ecommerceapp.R
 import com.example.ecommerceapp.databinding.ItemCategoryBinding
 import com.example.ecommerceapp.model.remote.data.category.Category
 import com.example.ecommerceapp.model.remote.data.Constants.BASE_IMAGE_URL
@@ -20,6 +21,8 @@ class CategoryAdapter(private val categoryList: List<Category>): RecyclerView.Ad
                 textCategoryName.text = category.category_name
                 Glide.with(view.context)
                     .load(BASE_IMAGE_URL + category.category_image_url)
+                    .error(R.drawable.ic_baseline_image_not_supported_24)
+                    .fallback(R.drawable.ic_baseline_image_not_supported_24)
                     .into(imgCategory)
             }
         }
