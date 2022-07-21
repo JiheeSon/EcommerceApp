@@ -39,6 +39,9 @@ The app in itself is a simple shopping app. Clicking the product list item it sh
 ## Architecture
 This app uses [***MVP (Model View Presenter)***](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) architecture.
 
+### Pending features
+- Dark mode theme comming soon!
+- Issue with posting payment method during checkout
 
 ### Contact - Let's become friend
 - [Github](https://github.com/JiheeSon)
