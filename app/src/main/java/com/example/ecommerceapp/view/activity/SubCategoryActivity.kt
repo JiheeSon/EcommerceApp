@@ -3,6 +3,7 @@ package com.example.ecommerceapp.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.ecommerceapp.databinding.ActivitySubCategoryBinding
 import com.example.ecommerceapp.model.remote.data.Constants.CATEGORY_ID
 import com.example.ecommerceapp.model.remote.data.subcategory.SubCategoryListResponse
@@ -46,6 +47,11 @@ class SubCategoryActivity : AppCompatActivity(), SubCategoryMVP.SubCategoryView 
 
     override fun setResult(data: Any) {
         subCategoryList = (data as SubCategoryListResponse).subcategories
+        if (subCategoryList.isEmpty()) {
+            binding.noItem.visibility = View.VISIBLE
+        } else {
+            binding.noItem.visibility = View.GONE
+        }
         setUpViewPager()
         setUpTabLayout()
     }

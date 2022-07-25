@@ -104,6 +104,11 @@ class ProductDetailActivity : AppCompatActivity(),ProductDetailMVP.ProductDetail
     }
 
     private fun setUpSpecificationTable(specifications: ArrayList<Specification>) {
+        if (specifications.isEmpty()) {
+            binding.noSpecification.visibility = View.VISIBLE
+        } else {
+            binding.noSpecification.visibility = View.GONE
+        }
         for (specification in specifications) {
             val row = TableRow(applicationContext)
             val title = TextView(applicationContext)

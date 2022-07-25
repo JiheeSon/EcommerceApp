@@ -37,7 +37,7 @@ class CartFragment : Fragment() {
 
     private fun setUpViews(view: View) {
         val cartList = getCartItemLocally(encryptedSharedPreferences)
-        if (cartList!!.isEmpty()) {
+        if (cartList == null) {
             binding.textNoItem.visibility = View.VISIBLE
             binding.btnCheckout.visibility = View.GONE
         } else {

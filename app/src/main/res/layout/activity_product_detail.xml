@@ -132,6 +132,16 @@
                 android:background="@drawable/background_gray_boundary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/no_specification"
+                    android:visibility="gone"
+                    android:text="@string/coming_soon"
+                    android:textColor="@color/purple_700"
+                    android:textStyle="italic"
+                    android:textSize="@dimen/_20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </TableLayout>
 
             <androidx.appcompat.widget.AppCompatTextView

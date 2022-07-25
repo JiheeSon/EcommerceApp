@@ -13,6 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_item"
+        android:visibility="gone"
+        android:text="@string/coming_soon"
+        android:textSize="@dimen/_30sp"
+        android:textColor="@color/main_sky_blue"
+        android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/circularProgressBar"
         android:layout_width="@dimen/_120dp"

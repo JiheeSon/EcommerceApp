@@ -51,6 +51,11 @@ class SubCategoryFragment : Fragment(), SubCategoryMVP.SubCategoryView {
         adapter = ProductAdapter(productList)
         binding.recyclerViewProduct.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewProduct.adapter = adapter
+        if (productList.isEmpty()) {
+            binding.noItem.visibility = View.VISIBLE
+        } else {
+            binding.noItem.visibility = View.GONE
+        }
     }
 
     override fun onLoad(isLoading: Boolean) {

@@ -105,6 +105,13 @@ class DeliveryFragment : Fragment(), DeliveryMVP.DeliveryView {
 
     private fun setUpRadioButtons() {
         binding.rgAddressOption.removeAllViews()
+
+        if (addressList.isEmpty()) {
+            binding.noAddress.visibility = View.VISIBLE
+        } else {
+            binding.noAddress.visibility = View.GONE
+        }
+
         for (address in addressList) {
             val option = RadioButton(context);
 

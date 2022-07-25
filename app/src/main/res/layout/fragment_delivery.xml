@@ -18,6 +18,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_address"
+        android:visibility="gone"
+        android:text="@string/no_address_in_your_database_n_please_add_your_address"
+        android:textSize="@dimen/_20sp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/recycler_view_address"-->
 <!--        app:layout_constraintTop_toBottomOf="@id/text_title"-->

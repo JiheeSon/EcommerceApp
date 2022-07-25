@@ -58,4 +58,6 @@
     <string name="no_reviews_on_this_item_yet">No reviews on this item yet!</string>
     <string name="super_cart">Super Cart</string>
     <string name="welcome">Welcome</string>
+    <string name="coming_soon">Coming Soon!</string>
+    <string name="no_address_in_your_database_n_please_add_your_address">No Address in your database! \n Please add your address</string>
 </resources>
